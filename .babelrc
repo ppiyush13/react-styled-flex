@@ -1,0 +1,36 @@
+{
+    "env": {
+        "production": {
+            "presets": ["@babel/env"],
+            "plugins": [
+                [
+                    "babel-plugin-styled-components",
+                    {
+                        "minify": true,
+                        "transpileTemplateLiterals": true,
+                        "displayName": true,
+                        "pure": true,
+                        "fileName": false,
+                        "ssr": false
+                    }
+                ]
+            ]
+        },
+        "test": {
+            "presets": ["@babel/env", "@babel/react"],
+            "plugins": [
+                [
+                    "babel-plugin-styled-components",
+                    {
+                        "minify": true,
+                        "transpileTemplateLiterals": true,
+                        "displayName": true,
+                        "pure": true,
+                        "fileName": false,
+                        "ssr": false
+                    }
+                ]
+            ]
+        }
+    }
+}

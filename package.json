@@ -1,0 +1,46 @@
+{
+  "name": "react-flexbox",
+  "version": "1.0.0",
+  "description": "Simple, light, unopionated, css standard compliant Flexbox component for React",
+  "main": "dist/react-flexbox.cjs.js",
+  "module": "dist/react-flexbox.esm.js",
+  "scripts": {
+    "build": "rollup --config rollup.config.js",
+    "build:watch": "npm run build -- -w",
+    "test": "jest --coverage --runInBand"
+  },
+  "keywords": [
+    "react",
+    "styled-componenets",
+    "styled",
+    "flexbox",
+    "flex"
+  ],
+  "author": {
+    "name": "Piyush Lodaya",
+    "email": "ppiyush13@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-plugin-styled-components": "1.10.5",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "jest": "^24.9.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "rollup": "^1.21.4",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.2",
+    "styled-components": "^4.3.2"
+  },
+  "peerDependencies": {
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0",
+    "styled-components": ">=4.0.0"
+  }
+}
