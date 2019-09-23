@@ -1,12 +1,22 @@
 import createHtmlElement from './createHtmlElement'
+import { findNodeModule } from 'jest-resolve';
 
-let memoizedResult
-export default () => {
-    if(memoizedResult != null) return memoizedResult;
+const PARENT_WIDTH = 10
+const GAP = 4
+
+const memoize = fn => {
+    let result
+    return () => {
+        result = result != null || fn()
+        return result
+    }
+}
+
+export default memoize(() => {
     /*
         Detection code
     */
-    const tempFragment = createHtmlElement(json)
+    const tempFragment = createHtmlElement(htmlJson)
     const testNode = tempFragment.children[0]
     /*
         Create temp html node for feature detection
@@ -15,20 +25,19 @@ export default () => {
     const width = window.getComputedStyle(testNode.firstElementChild)['width']
     document.body.removeChild(testNode)
     /*
-        Remove node and memoize result
+        Remove node and return result
     */
-    memoizedResult = width === '3px'
-    return memoizedResult
-}
+    return width === (PARENT_WIDTH - GAP) / 2 + 'px'
+})
 
-const json = {
+const htmlJson = {
     tag: 'div',
     style: {
         height: '1px',
-		width: '10px',
+		width: PARENT_WIDTH + 'px',
 		display: 'flex',
 		visibility: 'hidden',
-		gap: '4px'
+		gap: GAP + 'px'
     },
     content: [
         {

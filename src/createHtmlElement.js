@@ -9,7 +9,7 @@ const createElementsFromJSON = (json, parent) => {
         json.forEach(childJson => createElementsFromJSON(childJson, parent))
     }
     else if(json) {
-        const {style, content, id, classList} = json
+        const {content} = json
         var elem = document.createElement(json.tag);
         Object.keys(json).forEach(attr => {
             const value = json[attr]
@@ -27,7 +27,7 @@ const createElementsFromJSON = (json, parent) => {
     }
 }
 
-const assignStyle = (elem, obj) => {
+export const assignStyle = (elem, obj) => {
     Object.keys(obj).forEach(styleAttr => {
         const styleValue = obj[styleAttr]
         elem.style[styleAttr] = styleValue
