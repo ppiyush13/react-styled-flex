@@ -1,5 +1,3 @@
-//import detectFlexGapFeature from '../src/detectFlexGapFeature'
-
 let originalGetComputedStyles =  window.getComputedStyle
 let detectFlexGapFeature
 

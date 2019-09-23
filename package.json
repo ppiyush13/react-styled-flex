@@ -25,7 +25,6 @@
     "@babel/core": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
-    "babel-jest": "^24.9.0",
     "babel-plugin-rewire": "^1.2.0",
     "babel-plugin-styled-components": "1.10.5",
     "enzyme": "^3.10.0",
@@ -44,8 +43,5 @@
     "react": ">=16.0.0",
     "react-dom": ">=16.0.0",
     "styled-components": ">=4.0.0"
-  },
-  "jest": {
-    "testEnvironment": "node"
   }
 }

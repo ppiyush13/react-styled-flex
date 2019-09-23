@@ -1,5 +1,4 @@
 import createHtmlElement from './createHtmlElement'
-import { findNodeModule } from 'jest-resolve';
 
 const PARENT_WIDTH = 10
 const GAP = 4
@@ -12,7 +11,7 @@ const memoize = fn => {
     }
 }
 
-export default memoize(() => {
+const performFeatureDetection = () => {
     /*
         Detection code
     */
@@ -28,7 +27,7 @@ export default memoize(() => {
         Remove node and return result
     */
     return width === (PARENT_WIDTH - GAP) / 2 + 'px'
-})
+}
 
 const htmlJson = {
     tag: 'div',
@@ -54,3 +53,5 @@ const htmlJson = {
         }
     ]
 }
+
+export default memoize(performFeatureDetection)

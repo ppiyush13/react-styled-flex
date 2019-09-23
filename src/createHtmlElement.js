@@ -27,7 +27,7 @@ const createElementsFromJSON = (json, parent) => {
     }
 }
 
-export const assignStyle = (elem, obj) => {
+const assignStyle = (elem, obj) => {
     Object.keys(obj).forEach(styleAttr => {
         const styleValue = obj[styleAttr]
         elem.style[styleAttr] = styleValue
