@@ -1,15 +1,8 @@
 import createHtmlElement from './createHtmlElement'
+import memoize from './memoize'
 
 const PARENT_WIDTH = 10
 const GAP = 4
-
-const memoize = fn => {
-    let result
-    return () => {
-        result = result != null || fn()
-        return result
-    }
-}
 
 const performFeatureDetection = () => {
     /*

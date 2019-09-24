@@ -49,7 +49,7 @@ describe('Test suites for cleanElement module', () => {
         expect(cheerioWrapper.attr('height')).toEqual('50px') // height prop was missed from the cleanElement method
     })
 
-    it('should button div with leaking props as attrs by not passing any prop list to cleanElement call', () => {
+    it('should render button div with leaking props as attrs by not passing any prop list to cleanElement call', () => {
         const CleanDiv = cleanElement()
         const cleanDivComp = shallow(<CleanDiv is={'button'} enabled={"true"} type={"primary"} height={"50px"}/>)
         const cheerioWrapper = cleanDivComp.render()
