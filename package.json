@@ -25,6 +25,7 @@
     "@babel/core": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
+    "@testing-library/jest-dom": "^4.1.0",
     "babel-plugin-rewire": "^1.2.0",
     "babel-plugin-styled-components": "1.10.5",
     "enzyme": "^3.10.0",

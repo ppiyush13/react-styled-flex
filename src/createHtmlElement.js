@@ -8,9 +8,9 @@ const createElementsFromJSON = (json, parent) => {
     if(Array.isArray(json)) {
         json.forEach(childJson => createElementsFromJSON(childJson, parent))
     }
-    else if(json) {
-        const {content} = json
-        var elem = document.createElement(json.tag);
+    else if(json && typeof json === 'object') {
+        const {content, tag = 'div'} = json
+        const elem = document.createElement(tag)
         Object.keys(json).forEach(attr => {
             const value = json[attr]
             if(attr === 'tag') return
@@ -21,15 +21,24 @@ const createElementsFromJSON = (json, parent) => {
                 }
                 else elem.innerHTML = value
             }
-            else elem.setAttribute(attr, value)
+            else {
+                try {
+                    elem.setAttribute(attr, value)
+                }
+                catch(ex) {
+                    ex.name === 'InvalidCharacterError' && console.warn(`Invalid attribute ${attr}, skipping it`)
+                }
+            }
         })
         parent.appendChild(elem)
     }
 }
 
 const assignStyle = (elem, obj) => {
-    Object.keys(obj).forEach(styleAttr => {
-        const styleValue = obj[styleAttr]
-        elem.style[styleAttr] = styleValue
-    })
+    if(elem && obj && typeof obj === 'object') {
+        Object.keys(obj).forEach(styleAttr => {
+            const styleValue = obj[styleAttr]
+            elem.style[styleAttr] = styleValue
+        })
+    }
 }

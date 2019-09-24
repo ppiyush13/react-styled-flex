@@ -11,5 +11,4 @@ describe('Test suites for memoize module ', () => {
         expect(memoizedFn()).toEqual(value)
         expect(mockFn).toHaveBeenCalledTimes(1)
     })
-
 })

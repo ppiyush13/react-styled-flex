@@ -4,7 +4,7 @@ import memoize from './memoize'
 const PARENT_WIDTH = 10
 const GAP = 4
 
-const performFeatureDetection = () => {
+export default memoize(() => {
     /*
         Detection code
     */
@@ -20,7 +20,7 @@ const performFeatureDetection = () => {
         Remove node and return result
     */
     return width === (PARENT_WIDTH - GAP) / 2 + 'px'
-}
+})
 
 const htmlJson = {
     tag: 'div',
@@ -46,5 +46,3 @@ const htmlJson = {
         }
     ]
 }
-
-export default memoize(performFeatureDetection)
