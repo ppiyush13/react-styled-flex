@@ -1,5 +1,5 @@
 import React from 'react'
-import {shallow, mount} from 'enzyme'
+import {mount} from 'enzyme'
 import 'jest-styled-components'
 import {FlexBox, FlexItem, __RewireAPI__} from '../src'
 
