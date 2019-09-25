@@ -1,4 +1,20 @@
-{ 
+{
+    "plugins": [
+        [
+            "babel-plugin-styled-components",
+            {
+                "minify": true,
+                "transpileTemplateLiterals": true,
+                "displayName": true,
+                "pure": true,
+                "fileName": false,
+                "ssr": false
+            }
+        ]
+    ],
+    "presets": [
+        "@babel/env"
+    ],
     "env": {
         "test": {
             "presets": [
@@ -7,25 +23,14 @@
                     {
                         "targets": {
                             "node": "current",
-                        },
+                        }
                     }
-                ], 
+                ],
                 "@babel/react"
             ],
             "plugins": [
-                "babel-plugin-rewire",
-                [
-                    "babel-plugin-styled-components",
-                    {
-                        "minify": true,
-                        "transpileTemplateLiterals": true,
-                        "displayName": true,
-                        "pure": true,
-                        "fileName": false,
-                        "ssr": false
-                    }
-                ]
-            ],
+                "babel-plugin-rewire"
+            ]
         }
     }
 }
