@@ -41,7 +41,7 @@ jobs:
             JEST_JUNIT_OUTPUT_DIR: reports/jest
             JEST_JUNIT_OUTPUT_NAME: js-test-results.xml
       - store_test_results:
-          path: reports/jest
+          path: reports
       - run:
           name: Upload test results to codecov
           command: npm run codecov
