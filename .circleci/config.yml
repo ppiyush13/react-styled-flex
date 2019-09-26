@@ -27,7 +27,6 @@ jobs:
             - v1-dependencies-
 
       - run: npm install
-      - run: npm install -g codecov
 
       - save_cache:
           paths:
@@ -36,4 +35,4 @@ jobs:
 
       # run tests!
       - run: npm run test
-      - run: codecov
+      - run: npm run codecov
