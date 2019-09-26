@@ -34,7 +34,18 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: npm run test
-      - run: npm run codecov
+      - run:
+          name: Install JUnit coverage reporter
+          command: npm install -D jest-junit
+      - run:
+          name: Run tests with JUnit as reporter
+          command: jest --ci --runInBand --coverage --reporters=default --reporters=jest-junit
+          environment:
+            JEST_JUNIT_OUTPUT: "reports/junit/js-test-results.xml"
       - store_test_results:
-          path: coverage
+          path: reports/junit
+      - store_artifacts:
+          path: reports/junit
+      - run:
+          name: Upload test results to codecov
+          command: npm run codecov
