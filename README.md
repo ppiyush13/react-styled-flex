@@ -31,8 +31,8 @@ npm i react-styled-flex
 * `FlexItem` can be treated as `FlexBox` for nested childs by setting `box` prop as `true` on `FlexItem`
 
 ### Usage
-react-styled-flex exports two components: FlexBox and FlexItem
-Renders simple div with passed props as styles 
+**react-styled-flex** exports two components: **FlexBox** and **FlexItem**. 
+Both renders simple div with passed styles derived from passed props. 
 
 ```javascript
 import {FlexBox, FlexItem} from "react-styled-flex"
@@ -53,37 +53,36 @@ For rendering elements other than divs, please refer [Change underlying element
 
 ### Props
 
-##### FlexBox
+#### FlexBox
 
 |Props|Type|Description
---- | --- | ---
-height|*integer \| string*|Applies height
-width|*integer \| string*|Applies width
-margin|*integer \| string*|Applies margin using CSS [margin][margin-mdn] shorthand specification.
-padding|*integer \| string*|Applies padding using CSS [padding][padding-mdn] shorthand specification.
-border|*integer \| string*|Applies border using CSS [border][border-mdn] shorthand specification.
-inline|*boolean*|If true, applies `display: inline-flex` rule. Default: *false*
+--- | :---: | ---
+height|*integer&nbsp;\|&nbsp;string*|Applies height
+width|*integer&nbsp;\|&nbsp;string*|Applies width
+margin|*integer&nbsp;\|&nbsp;string*|Applies margin using CSS [margin][margin-mdn] shorthand specification.
+padding|*integer&nbsp;\|&nbsp;string*|Applies padding using CSS [padding][padding-mdn] shorthand specification.
+border|*integer&nbsp;\|&nbsp;string*|Applies border using CSS [border][border-mdn] shorthand specification.
+inline|*boolean*|If true, applies `display: inline-flex` rule otherwise applies `display: flex`. Default: *false*
 column|*boolean*|If true, `flex-direction` rule is set as `column` otherwise set as `row`
-reverse|*boolean*|It works in tandem with `column` prop to generate `flex-direction: {row|column}-reverse`. Following table summaries it,<br/>  <table><thead><tr><th>column</th><th>reverse</th><th>flex&minus;direction</th></tr></thead><tbody><tr><td>false</td><td>false</td><td>row</td></tr><tr><td>false</td><td>true</td><td>row-reverse</td></tr><tr><td>true</td><td>false</td><td>column</td></tr><tr><td>true</td><td>true</td><td>column-reverse</td></tr></tbody></table>
+reverse|*boolean*|It works in tandem with `column` prop to generate `flex-direction: {row\|column}-reverse`. Following table summaries it,<br/>  <table><thead><tr><th>column</th><th>reverse</th><th>flex&minus;direction</th></tr></thead><tbody><tr><td>false</td><td>false</td><td>row</td></tr><tr><td>false</td><td>true</td><td>row-reverse</td></tr><tr><td>true</td><td>false</td><td>column</td></tr><tr><td>true</td><td>true</td><td>column-reverse</td></tr></tbody></table>
 wrap|*boolean*|If true, applies `flex-wrap` as `wrap`
 wrapReverse|*boolean*|If true, applies `flex-wrap` as `wrap-reverse`
 justifyContent|*string*|Applies `justify-content` rule. Depending on the browser, [these justify-content][justify-content-mdn] values might be supported.
 alignItems|*string*|Applies `align-items` rule. Depending on the browser, [these align-items][align-items-mdn] values might be supported.
 alignContent|*string*|Applies `align-content` rule. Depending on the browser, [these align-content][align-content-mdn] values might be supported.
 center|*boolean*|If true, then applies `justify-content: center` and `align-items: center`
-gap|*integer \| string*| Applies gap using CSS [gap][gap-mdn] shorthand specification if browser supports it.
-columnGap|*integer \| string*| Applies CSS [column-gap][column-gap-mdn] property if browser supports it.
-rowGap|*integer \| string*| Applies CSS [row-gap][row-gap-mdn] property if browser supports it.
+gap|*integer&nbsp;\|&nbsp;string*| Applies gap using CSS [gap][gap-mdn] shorthand specification if browser supports it.
+columnGap|*integer&nbsp;\|&nbsp;string*| Applies CSS [column-gap][column-gap-mdn] property if browser supports it.
+rowGap|*integer&nbsp;\|&nbsp;string*| Applies CSS [row-gap][row-gap-mdn] property if browser supports it.
 
-<br/>
-##### FlexItem
+#### FlexItem
 |Props|Type|Description
---- | --- | ---
-order|*integer \| string*|Applies CSS [order][order-mdn] property
-flex|*integer \| string*|Applies flex using CSS [flex][flex-prop-mdn] shorthand specification.
-grow|*integer \| string*|Applies CSS [flex-grow][flex-grow-mdn] property
-shrink|*integer \| string*|Applies CSS [flex-shrink][flex-shrink-mdn] property
-basis|*integer \| string*|Applies CSS [flex-basis][flex-basis-mdn] property
+--- | :---: | ---
+order|*integer&nbsp;\|&nbsp;string*|Applies CSS [order][order-mdn] property
+flex|*integer&nbsp;\|&nbsp;string*|Applies flex using CSS [flex][flex-prop-mdn] shorthand specification.
+grow|*integer&nbsp;\|&nbsp;string*|Applies CSS [flex-grow][flex-grow-mdn] property
+shrink|*integer&nbsp;\|&nbsp;string*|Applies CSS [flex-shrink][flex-shrink-mdn] property
+basis|*integer&nbsp;\|&nbsp;string*|Applies CSS [flex-basis][flex-basis-mdn] property
 alignSelf|*string*|Applies `align-self` rule. Depending on the browser, [these align-self][align-self-mdn] values might be supported.
 box|*boolean*|If true, then FlexItem also behaves as a FlexBox. So in addition to FlexItem props, all the FlexBox props can also be applied.<br/>Default: *false*
 
@@ -115,6 +114,10 @@ box|*boolean*|If true, then FlexItem also behaves as a FlexBox. So in addition t
 * Similarly any react component can be rendered
 * Please don't use `as` prop, provided by **styled-components**, to change underlying DOM element. Element would be changed but it will leak props to the DOM.
 
+### Resources
+* [A Complete Guide to Flexbox][flex-guide-css-tricks]
+* [CSS Flexible Box Layout][flex-guide-mdn]
+
 [build]: https://circleci.com/gh/ppiyush13/react-flexbox/tree/master.svg?style=shield
 [build-url]: https://circleci.com/gh/ppiyush13/react-flexbox/tree/master
 
@@ -141,3 +144,5 @@ box|*boolean*|If true, then FlexItem also behaves as a FlexBox. So in addition t
 [flex-shrink-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-shrink
 [flex-basis-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis
 [align-self-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/align-self#Values
+[flex-guide-css-tricks]: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+[flex-guide-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout
