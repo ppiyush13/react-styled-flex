@@ -20,15 +20,15 @@ const flexBoxStyles = css(props => {
 		flexDirection = column ? 'column' : 'row'
 		flexDirection += reverse ? '-reverse' : ''
 	}
-	if(!detectFlexGapFeature()) {
-		if(gap || columnGap || rowGap) {
-			if(wrap) {
-				/**
-				 * Gap in wrap mode is not supported yet
-				 * If you have any better suggestions please create an issue or contribute by raising merge requests
-				*/
-			}
-			else {
+	if(gap || columnGap || rowGap) {
+		if(wrap) {
+			/**
+			 * Gap in wrap mode is not supported yet
+			 * If you have any better suggestions please create an issue or contribute by raising merge requests
+			*/
+		}
+		else {
+			if(!detectFlexGapFeature()) {
 				const marginProp = column ? 'bottom' : 'right'
 				const child = reverse ? 'first' : 'last'
 				const gapProp = (column ? rowGap : columnGap) || gap

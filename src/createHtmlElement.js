@@ -1,7 +1,10 @@
-export default json => {
-    const parent = document.createDocumentFragment()
-    createElementsFromJSON(json, parent)
-    return parent
+const assignStyle = (elem, obj) => {
+    if(elem && obj && typeof obj === 'object') {
+        Object.keys(obj).forEach(styleAttr => {
+            const styleValue = obj[styleAttr]
+            elem.style[styleAttr] = styleValue
+        })
+    }
 }
 
 const createElementsFromJSON = (json, parent) => {
@@ -13,13 +16,13 @@ const createElementsFromJSON = (json, parent) => {
         const elem = document.createElement(tag)
         Object.keys(json).forEach(attr => {
             const value = json[attr]
-            if(attr === 'tag') return
+            if(attr === 'tag') return;
             else if(attr === 'style') assignStyle(elem, value)
             else if(attr === 'content') {
                 if(typeof content === 'object') {
                     createElementsFromJSON(value, elem)
                 }
-                else elem.innerHTML = value
+                else elem.textContent = value
             }
             else {
                 try {
@@ -34,11 +37,8 @@ const createElementsFromJSON = (json, parent) => {
     }
 }
 
-const assignStyle = (elem, obj) => {
-    if(elem && obj && typeof obj === 'object') {
-        Object.keys(obj).forEach(styleAttr => {
-            const styleValue = obj[styleAttr]
-            elem.style[styleAttr] = styleValue
-        })
-    }
+export default json => {
+    const parent = document.createDocumentFragment()
+    createElementsFromJSON(json, parent)
+    return parent
 }
