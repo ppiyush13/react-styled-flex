@@ -2,7 +2,7 @@ let originalGetComputedStyles =  window.getComputedStyle
 let detectFlexGapFeature
 
 beforeEach(async () => {
-    jest.resetModules()
+    jest.resetModules();
     detectFlexGapFeature = (await import ('../src/detectFlexGapFeature'))['default']
 })
 
