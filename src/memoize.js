@@ -1,7 +1,10 @@
 export default fn => {
-    let result = {}
-    let resultKey = 'R'
+    const result = {};
+    const resultKey = 'R';
     return () => {
-        return result[resultKey] = result.hasOwnProperty(resultKey) ? result[resultKey]: fn()
-    }
-}
+        result[resultKey] = Object.prototype.hasOwnProperty.call(result, resultKey)
+            ? result[resultKey]
+            : fn();
+        return result[resultKey];
+    };
+};
