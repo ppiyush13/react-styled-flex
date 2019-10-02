@@ -5,6 +5,9 @@
   [![codecov][coverage]][coverage-url]
   
   # react-styled-flex
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/ppiyush13/react-flexbox.svg)](https://greenkeeper.io/)
+
   Simple, light, unopionated, CSS standard compliant Flexbox component for [react][react-git] using [styled-components][styled-components-git]
 </div>  
 
