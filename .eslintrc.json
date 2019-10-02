@@ -38,7 +38,7 @@
     },
     "overrides": [
         {
-            "files": ["test/index.test.js", "test/createHtmlElement.test.js", "test/detectFlexFapFeature.test.js"],
+            "files": ["test/index.test.js", "test/createHtmlElement.test.js", "test/detectFlexGapFeature.test.js"],
             "rules": {
                 "import/named": "off",
                 "no-underscore-dangle": "off",

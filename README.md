@@ -1,5 +1,6 @@
 <div align="center">
   
+  [![Codacy Badge][codacy]][codacy-url]
   [![CircleCI][build]][build-url]
   [![codecov][coverage]][coverage-url]
   
@@ -123,6 +124,8 @@ For rendering elements other than divs, please refer [Change underlying element
 *   [A Complete Guide to Flexbox][flex-guide-css-tricks]
 *   [CSS Flexible Box Layout][flex-guide-mdn]
 
+[codacy]: https://api.codacy.com/project/badge/Grade/3883d0db80a44fa6b18a311be25a8553
+[codacy-url]: https://www.codacy.com/manual/ppiyush13/react-flexbox?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ppiyush13/react-flexbox&amp;utm_campaign=Badge_Grade
 [build]: https://circleci.com/gh/ppiyush13/react-flexbox/tree/master.svg?style=shield
 [build-url]: https://circleci.com/gh/ppiyush13/react-flexbox/tree/master
 [coverage]: https://codecov.io/gh/ppiyush13/react-flexbox/branch/master/graph/badge.svg
