@@ -9,6 +9,7 @@
     "build:watch": "npm run build -- -w",
     "test": "jest --coverage --runInBand",
     "test:ci": "jest --ci --runInBand --coverage --reporters=default --reporters=jest-junit",
+    "lint": "eslint . --ext .js,.jsx,.json",
     "codecov": "codecov"
   },
   "keywords": [
@@ -33,6 +34,11 @@
     "codecov": "^3.6.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-json": "^1.4.0",
+    "eslint-plugin-react": "^7.15.1",
     "jest": "^24.9.0",
     "jest-junit": "^8.0.0",
     "jest-styled-components": "^6.3.3",

@@ -1,0 +1,49 @@
+{
+    "extends": "airbnb-base",
+    "plugins": ["react", "json"],
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "node": true,
+        "jest": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "indent": ["error", 4],
+        "linebreak-style": ["error", "windows"],
+        "arrow-parens": ["error", "as-needed"],
+        "brace-style": ["error", "stroustrup"],
+        "complexity": ["warn", 10],
+        "object-curly-newline": [
+            "error",
+            {
+                "consistent": true
+            }
+        ],
+        "react/jsx-uses-react": "error",   
+        "react/jsx-uses-vars": "error",
+        "import/no-extraneous-dependencies": [
+            "error", 
+            {
+                "peerDependencies": true,
+                "devDependencies": ["**/*.test.js", "setupTests.js", "rollup.config.js"]
+            }
+        ]
+    },
+    "overrides": [
+        {
+            "files": ["test/index.test.js", "test/createHtmlElement.test.js", "test/detectFlexGapFeature.test.js"],
+            "rules": {
+                "import/named": "off",
+                "no-underscore-dangle": "off",
+                "no-undef": "off"
+            }
+        }
+    ]
+}
