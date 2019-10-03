@@ -3,16 +3,15 @@
   [![Codacy Badge][codacy]][codacy-url]
   [![CircleCI][build]][build-url]
   [![codecov][coverage]][coverage-url]
-  
-  # react-styled-flex
+  [![Greenkeeper badge][greenkeeper]][greenkeeper-url]
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/ppiyush13/react-flexbox.svg)](https://greenkeeper.io/)
+  # react-styled-flex
 
   Simple, light, unopionated, CSS standard compliant Flexbox component for [react][react-git] using [styled-components][styled-components-git]
 </div>  
 
 ### Features
-*   **Small and dependency free**. ~4 KB minified or ~1.7 KB minified + gzipped.
+*   **Small and dependency free**, ~4 KB minified or ~1.7 KB minified + gzipped.
 *   **Clean underlying HTML DOM**. No prop leakage to DOM.
 *   Supports [flex-gap][flex-gap] feature.
 *   [Supports rendering](change-underlying-element) of any react component or html element.
@@ -133,6 +132,8 @@ For rendering elements other than divs, please refer [Change underlying element
 [build-url]: https://circleci.com/gh/ppiyush13/react-flexbox/tree/master
 [coverage]: https://codecov.io/gh/ppiyush13/react-flexbox/branch/master/graph/badge.svg
 [coverage-url]: https://codecov.io/gh/ppiyush13/react-flexbox
+[greenkeeper]: https://badges.greenkeeper.io/ppiyush13/react-flexbox.svg
+[greenkeeper-url]: https://greenkeeper.io/
 [styled-components-git]: https://github.com/styled-components/styled-components
 [react-git]: https://github.com/facebook/react
 [flex-gap]: https://developer.mozilla.org/en-US/docs/Web/CSS/gap#Flex_layout

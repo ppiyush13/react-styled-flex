@@ -13,13 +13,13 @@
         ]
     ],
     "presets": [
-        "@babel/env"
+        "@babel/preset-env"
     ],
     "env": {
         "test": {
             "presets": [
                 [
-                    "@babel/env",
+                    "@babel/preset-env",
                     {
                         "targets": {
                             "node": "current",
@@ -27,9 +27,6 @@
                     }
                 ],
                 "@babel/react"
-            ],
-            "plugins": [
-                "babel-plugin-rewire"
             ]
         }
     }

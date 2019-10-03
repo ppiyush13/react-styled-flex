@@ -1,7 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import 'jest-styled-components';
-import { FlexBox, FlexItem, __RewireAPI__ } from '../src';
+import { FlexBox, FlexItem } from '../src';
+import * as dependency from '../src/detectFlexGapFeature';
 
 describe('testing flexBox component', () => {
     it('should render FlexBox component with given styles', () => {
@@ -81,107 +82,6 @@ describe('testing flexBox component', () => {
         expect(component).toHaveStyleRule('padding', '14px 15px 100% 10rem');
     });
 
-    it('should apply gap when wrap is false', () => {
-        const component = mount(<FlexBox gap={20}>
-            <p></p>
-            <p></p>
-        </FlexBox>);
-
-        expect(component).toHaveStyleRule('margin-right', '20px', {
-            modifier: '& > :not(:last-child)',
-        });
-    });
-
-    it('should apply gap when wrap is false', () => {
-        const component = mount(<FlexBox reverse gap={'5px'}>
-            <p></p>
-            <p></p>
-        </FlexBox>);
-
-        expect(component).toHaveStyleRule('margin-right', '5px', {
-            modifier: '& > :not(:first-child)',
-        });
-    });
-
-    it('should apply gap when wrap is false', () => {
-        const component = mount(<FlexBox column reverse gap={'5rem'}>
-            <p></p>
-            <p></p>
-        </FlexBox>);
-
-        expect(component).toHaveStyleRule('margin-bottom', '5rem', {
-            modifier: '& > :not(:first-child)',
-        });
-    });
-
-    it('should apply gap when wrap is false', () => {
-        const component = mount(<FlexBox column gap={'1.5%'}>
-            <p></p>
-            <p></p>
-        </FlexBox>);
-
-        expect(component).toHaveStyleRule('margin-bottom', '1.5%', {
-            modifier: '& > :not(:last-child)',
-        });
-    });
-
-    it('should not apply margin when wrap is true', () => {
-        const component = mount(<FlexBox wrap gap={20}>
-            <p></p>
-            <p></p>
-        </FlexBox>);
-
-        expect(component).not.toHaveStyleRule('margin-right', '20px', {
-            modifier: '& > :not(:last-child)',
-        });
-    });
-
-    it('should not apply margin when detectFlexGapFeature fn returns true', () => {
-        __RewireAPI__.__Rewire__('detectFlexGapFeature', () => true);
-        const component = mount(<FlexBox gap={20}>
-            <p></p>
-            <p></p>
-        </FlexBox>);
-
-        expect(component).not.toHaveStyleRule('margin-right', '20px', {
-            modifier: '& > :not(:last-child)',
-        });
-        __rewire_reset_all__();
-    });
-
-    it('should set gap: 10 when detectFlexGapFeature fn returns true', () => {
-        __RewireAPI__.__Rewire__('detectFlexGapFeature', () => true);
-        const component = mount(<FlexBox gap={10}>
-            <p></p>
-            <p></p>
-        </FlexBox>);
-
-        expect(component).toHaveStyleRule('gap', '10px');
-        __rewire_reset_all__();
-    });
-
-    it('should set column-gap: 20 when detectFlexGapFeature fn returns true', () => {
-        __RewireAPI__.__Rewire__('detectFlexGapFeature', () => true);
-        const component = mount(<FlexBox columnGap={20}>
-            <p></p>
-            <p></p>
-        </FlexBox>);
-
-        expect(component).toHaveStyleRule('column-gap', '20px');
-        __rewire_reset_all__();
-    });
-
-    it('should set row-gap: 30 when detectFlexGapFeature fn returns true', () => {
-        __RewireAPI__.__Rewire__('detectFlexGapFeature', () => true);
-        const component = mount(<FlexBox rowGap={30}>
-            <p></p>
-            <p></p>
-        </FlexBox>);
-
-        expect(component).toHaveStyleRule('row-gap', '30px');
-        __rewire_reset_all__();
-    });
-
     it('should render as button when is prop="button"', () => {
         const component = mount(<FlexBox is={'button'}>
             <p></p>
@@ -189,6 +89,120 @@ describe('testing flexBox component', () => {
         </FlexBox>);
 
         expect(component.find('button').length).toEqual(1);
+    });
+});
+
+describe('testing FlexBox gap feature', () => {
+    let orgDetectFlexGapFeatureModule;
+    beforeAll(() => {
+        orgDetectFlexGapFeatureModule = dependency.default;
+    });
+
+    afterAll(() => {
+        dependency.default = orgDetectFlexGapFeatureModule;
+    });
+
+    describe('when flex gap feature is supported', () => {
+        beforeAll(() => {
+            dependency.default = () => true;
+        });
+        it('should not apply margin when detectFlexGapFeature fn returns true', () => {
+            const component = mount(<FlexBox gap={20}>
+                <p></p>
+                <p></p>
+            </FlexBox>);
+
+            expect(component).not.toHaveStyleRule('margin-right', '20px', {
+                modifier: '& > :not(:last-child)',
+            });
+        });
+
+        it('should set gap: 10 when detectFlexGapFeature fn returns true', () => {
+            const component = mount(<FlexBox gap={10}>
+                <p></p>
+                <p></p>
+            </FlexBox>);
+
+            expect(component).toHaveStyleRule('gap', '10px');
+        });
+
+        it('should set column-gap: 20 when detectFlexGapFeature fn returns true', () => {
+            const component = mount(<FlexBox columnGap={20}>
+                <p></p>
+                <p></p>
+            </FlexBox>);
+
+            expect(component).toHaveStyleRule('column-gap', '20px');
+        });
+
+        it('should set row-gap: 30 when detectFlexGapFeature fn returns true', () => {
+            const component = mount(<FlexBox rowGap={30}>
+                <p></p>
+                <p></p>
+            </FlexBox>);
+
+            expect(component).toHaveStyleRule('row-gap', '30px');
+        });
+    });
+
+    describe('when flex gap feature is not supported', () => {
+        beforeAll(() => {
+            dependency.default = () => false;
+        });
+        it('should apply gap when wrap is false', () => {
+            const component = mount(<FlexBox gap={20}>
+                <p></p>
+                <p></p>
+            </FlexBox>);
+
+            expect(component).toHaveStyleRule('margin-right', '20px', {
+                modifier: '& > :not(:last-child)',
+            });
+        });
+
+        it('should apply gap when wrap is false and reverse is true', () => {
+            const component = mount(<FlexBox reverse gap={'5px'}>
+                <p></p>
+                <p></p>
+            </FlexBox>);
+
+            expect(component).toHaveStyleRule('margin-right', '5px', {
+                modifier: '& > :not(:first-child)',
+            });
+        });
+
+        it('should apply gap when wrap is false and column is true', () => {
+            const component = mount(<FlexBox column gap={'1.5%'}>
+                <p></p>
+                <p></p>
+            </FlexBox>);
+
+            expect(component).toHaveStyleRule('margin-bottom', '1.5%', {
+                modifier: '& > :not(:last-child)',
+            });
+        });
+
+        it('should apply gap when wrap is false and both column and reverse are true', () => {
+            const component = mount(<FlexBox column reverse gap={'5rem'}>
+                <p></p>
+                <p></p>
+            </FlexBox>);
+
+            expect(component).toHaveStyleRule('margin-bottom', '5rem', {
+                modifier: '& > :not(:first-child)',
+            });
+        });
+
+        it('should not apply margin when wrap is true', () => {
+            const component = mount(<FlexBox wrap gap={20}>
+                <p></p>
+                <p></p>
+            </FlexBox>);
+
+            expect(component).not.toHaveStyleRule('margin-right', '20px', {
+                modifier: '& > :not(:last-child)',
+            });
+        });
     });
 });
 
@@ -247,5 +261,16 @@ describe('testing FlexItem component', () => {
         expect(component.find(FlexItem).length).toEqual(1);
         const flexItem = component.find(FlexItem).at(0);
         expect(flexItem.render().get(0).name).toEqual('p');
+    });
+});
+
+describe('testing FlexBox and FlexItem components displayName', () => {
+    it('should return displayName as FlexBox', () => {
+        expect(FlexBox.displayName).toEqual('FlexBox');
+        expect(FlexBox.styledComponentId).toContain('FlexBox');
+    });
+    it('should return displayName as FlexBox', () => {
+        expect(FlexItem.displayName).toEqual('FlexItem');
+        expect(FlexItem.styledComponentId).toContain('FlexItem');
     });
 });

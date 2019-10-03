@@ -44,6 +44,8 @@ const createElementsFromJSON = (json, parent) => {
     }
 };
 
+export { assignStyle };
+
 export default json => {
     const parent = document.createDocumentFragment();
     createElementsFromJSON(json, parent);

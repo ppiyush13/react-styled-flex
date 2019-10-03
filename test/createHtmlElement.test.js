@@ -1,8 +1,7 @@
 import '@testing-library/jest-dom/extend-expect';
-import createHtmlElement from '../src/createHtmlElement';
+import createHtmlElement, { assignStyle } from '../src/createHtmlElement';
 
 describe('unit testing assignStyle function within createHtmlElement module', () => {
-    const assignStyle = createHtmlElement.__get__('assignStyle');
     it.each([
         [{ height: '50px' }, 'height: 50px;'],
         [{}, ''],

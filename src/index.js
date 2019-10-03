@@ -36,9 +36,8 @@ const flexBoxStyles = css(props => {
             const gapProp = (column ? rowGap : columnGap) || gap;
 
             gapKey = `& > :not(:${child}-child)`;
-            gapObj = {
-                [`margin-${marginProp}`]: gapProp,
-            };
+            gapObj = {};
+            gapObj[`margin-${marginProp}`] = gapProp;
         }
     }
     if (center) {
@@ -48,7 +47,7 @@ const flexBoxStyles = css(props => {
     if (wrap) flexWrap = 'wrap';
     if (wrapReverse) flexWrap = 'wrap-reverse';
 
-    return {
+    const result = {
         display: inline ? 'inline-flex' : 'flex',
         flexWrap,
         justifyContent,
@@ -58,8 +57,11 @@ const flexBoxStyles = css(props => {
         gap,
         columnGap,
         rowGap,
-        [gapKey]: gapObj,
     };
+
+    result[gapKey] = gapObj;
+
+    return result;
 });
 
 const flexItemStyles = css(props => {

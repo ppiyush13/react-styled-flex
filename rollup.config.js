@@ -24,9 +24,10 @@ export default [
         external: Object.keys(pkg.peerDependencies),
         plugins: [
             babel({
+                babelHelpers: 'bundled',
+                skipBabelHelpersCheck: true,
                 exclude: 'node_modules/**',
                 compact: false,
-                runtimeHelpers: false,
             }),
             nodeResolve(),
             commonJs(),
