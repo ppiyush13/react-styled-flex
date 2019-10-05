@@ -1,0 +1,6 @@
+{
+    "*": [
+        "jest --passWithNoTests --bail --findRelatedTests",
+        "npm run lint"
+    ]
+}
