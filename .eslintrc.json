@@ -35,15 +35,5 @@
                 "devDependencies": ["**/*.test.js", "setupTests.js", "rollup.config.js"]
             }
         ]
-    },
-    "overrides": [
-        {
-            "files": ["test/index.test.js", "test/createHtmlElement.test.js", "test/detectFlexGapFeature.test.js"],
-            "rules": {
-                "import/named": "off",
-                "no-underscore-dangle": "off",
-                "no-undef": "off"
-            }
-        }
-    ]
+    }
 }
