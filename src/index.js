@@ -70,9 +70,9 @@ const flexItemStyles = css(props => {
         order,
         flex,
         alignSelf,
-        'flex-basis': basis,
-        'flex-shrink': shrink,
-        'flex-grow': grow,
+        flexBasis: basis,
+        flexShrink: shrink,
+        flexGrow: grow,
     };
 });
 const CleanFlexBox = CleanElement([...boxProps, ...flexBoxProps]);

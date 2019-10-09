@@ -262,6 +262,17 @@ describe('testing FlexItem component', () => {
         const flexItem = component.find(FlexItem).at(0);
         expect(flexItem.render().get(0).name).toEqual('p');
     });
+
+    it('should apply flex grow and flex shrink without any units', () => {
+        const component = mount(<FlexBox>
+            <FlexItem grow={1} shrink={1}>child</FlexItem>
+        </FlexBox>);
+
+        expect(component.find(FlexItem).length).toEqual(1);
+        const flexItem = component.find('FlexItem');
+        expect(flexItem).toHaveStyleRule('flex-grow', '1');
+        expect(flexItem).toHaveStyleRule('flex-shrink', '1');
+    });
 });
 
 describe('testing FlexBox and FlexItem components displayName', () => {

@@ -13,7 +13,7 @@
 ### Features
 *   **Small and dependency free**, ~4 KB minified or ~1.7 KB minified + gzipped.
 *   **Clean underlying HTML DOM**. No prop leakage to DOM.
-*   Supports [flex-gap][flex-gap] feature.
+*   Supports [flex-gap][flex-gap] feature. For non supported browsers, it degrades gracefully by applying appropriate margin properties.
 *   [Supports rendering](change-underlying-element) of any react component or html element.
 *   [Supports unitless values](supports-unitless-values) wherever required.
 
@@ -70,22 +70,22 @@ For rendering elements other than divs, please refer [Change underlying element
 |reverse|*boolean*|It works in tandem with `column` prop to generate `flex-direction: {row\|column}-reverse`. Following table summaries it,<br/>  <table><thead><tr><th>column</th><th>reverse</th><th>flex&minus;direction</th></tr></thead><tbody><tr><td>false</td><td>false</td><td>row</td></tr><tr><td>false</td><td>true</td><td>row-reverse</td></tr><tr><td>true</td><td>false</td><td>column</td></tr><tr><td>true</td><td>true</td><td>column-reverse</td></tr></tbody></table>|
 |wrap|*boolean*|If true, applies `flex-wrap` as `wrap`|
 |wrapReverse|*boolean*|If true, applies `flex-wrap` as `wrap-reverse`|
-|justifyContent|*string*|Applies `justify-content` rule. Depending on the browser, [these justify-content][justify-content-mdn] values might be supported.|
-|alignItems|*string*|Applies `align-items` rule. Depending on the browser, [these align-items][align-items-mdn] values might be supported.|
-|alignContent|*string*|Applies `align-content` rule. Depending on the browser, [these align-content][align-content-mdn] values might be supported.|
 |center|*boolean*|If true, then applies `justify-content: center` and `align-items: center`|
 |gap|*integer&nbsp;&vert;&nbsp;string*| Applies gap using CSS [gap][gap-mdn] shorthand specification if browser supports it.|
 |columnGap|*integer&nbsp;&vert;&nbsp;string*| Applies CSS [column-gap][column-gap-mdn] property if browser supports it.|
 |rowGap|*integer&nbsp;&vert;&nbsp;string*| Applies CSS [row-gap][row-gap-mdn] property if browser supports it.|
+|justifyContent|*string*|Applies `justify-content` rule. Depending on the browser, [these justify-content][justify-content-mdn] values might be supported.|
+|alignItems|*string*|Applies `align-items` rule. Depending on the browser, [these align-items][align-items-mdn] values might be supported.|
+|alignContent|*string*|Applies `align-content` rule. Depending on the browser, [these align-content][align-content-mdn] values might be supported.|
 
 #### FlexItem
 |Props|Type|Description|
 |---|:---:|---|
-|order|*integer&nbsp;&vert;&nbsp;string*|Applies CSS [order][order-mdn] property|
 |flex|*integer&nbsp;&vert;&nbsp;string*|Applies flex using CSS [flex][flex-prop-mdn] shorthand specification.|
 |grow|*integer&nbsp;&vert;&nbsp;string*|Applies CSS [flex-grow][flex-grow-mdn] property|
 |shrink|*integer&nbsp;&vert;&nbsp;string*|Applies CSS [flex-shrink][flex-shrink-mdn] property|
 |basis|*integer&nbsp;&vert;&nbsp;string*|Applies CSS [flex-basis][flex-basis-mdn] property|
+|order|*integer&nbsp;&vert;&nbsp;string*|Applies CSS [order][order-mdn] property|
 |alignSelf|*string*|Applies `align-self` rule. Depending on the browser, [these align-self][align-self-mdn] values might be supported.|
 |box|*boolean*|If true, then FlexItem also behaves as a FlexBox. So in addition to FlexItem props, all the FlexBox props can also be applied.<br/>Default: *false*|
 
