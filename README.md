@@ -110,9 +110,10 @@ For rendering elements other than divs, please refer [Change underlying element
 
 *   Example:
     ```javascript
-    import {FlexBox, FlexItem} from "react-styled-flex"
+    import {FlexBox, FlexItem} from "react-styled-flex";
+
     <FlexBox center>
-    	<FlexItem is={"button"}>Child 1</FlexItem>
+        <FlexItem is={"button"}>Child 1</FlexItem>
         <FlexItem is={"button"}>Child 2</FlexItem>
     </FlexBox>
     ```
