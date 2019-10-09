@@ -2,8 +2,8 @@
   "name": "react-styled-flex",
   "version": "1.0.0",
   "description": "Simple, light, unopionated, css standard compliant Flexbox component for React using Styled Components",
-  "main": "dist/react-flexbox.cjs.js",
-  "module": "dist/react-flexbox.esm.js",
+  "main": "dist/react-styled-flex.cjs.js",
+  "module": "dist/react-styled-flex.esm.js",
   "scripts": {
     "build": "rollup --config",
     "build:watch": "npm run build -- -w",
