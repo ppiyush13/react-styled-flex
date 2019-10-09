@@ -1,14 +1,11 @@
-<div align="center">
+# react-styled-flex
   
-  [![Codacy Badge][codacy]][codacy-url]
-  [![CircleCI][build]][build-url]
-  [![codecov][coverage]][coverage-url]
-  [![Greenkeeper badge][greenkeeper]][greenkeeper-url]
+[![Codacy Badge][codacy]][codacy-url]
+[![CircleCI][build]][build-url]
+[![codecov][coverage]][coverage-url]
+[![Greenkeeper badge][greenkeeper]][greenkeeper-url]
 
-  # react-styled-flex
-
-  Simple, light, unopionated, CSS standard compliant Flexbox component for [react][react-git] using [styled-components][styled-components-git]
-</div>  
+Simple, light, unopionated, CSS standard compliant Flexbox component for [react][react-git] using [styled-components][styled-components-git]
 
 ### Features
 *   **Small and dependency free**, ~4 KB minified or ~1.7 KB minified + gzipped.
