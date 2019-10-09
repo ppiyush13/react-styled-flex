@@ -1,6 +1,6 @@
 {
-    "*": [
-        "jest --passWithNoTests --bail --findRelatedTests",
-        "npm run lint"
-    ]
+    "*.{js,jsx,json}": [
+        "npm run test:precommit",
+        "npm run lint:precommit"
+    ],
 }
