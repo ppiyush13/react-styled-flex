@@ -14,24 +14,13 @@
     "test:precommit": "jest --passWithNoTests --bail --findRelatedTests",
     "lint:precommit": "eslint --ext .js,.jsx,.json"
   },
-  "keywords": [
-    "react-styled-flex",
-    "react",
-    "styled-componenets",
-    "styled",
-    "flexbox",
-    "flex",
-    "react-flex",
-    "styled-flex",
-    "react-flexbox",
-    "styled-flexbox",
-    "flex-gap",
-    "gap"
-  ],
   "author": {
     "name": "Piyush Lodaya",
     "email": "ppiyush13@gmail.com"
   },
+  "files": [
+    "dist"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.6.3",
@@ -66,5 +55,19 @@
     "react": ">=16.0.0",
     "react-dom": ">=16.0.0",
     "styled-components": ">=4.0.0"
-  }
+  },
+  "keywords": [
+    "react-styled-flex",
+    "react",
+    "styled-componenets",
+    "styled",
+    "flexbox",
+    "flex",
+    "react-flex",
+    "styled-flex",
+    "react-flexbox",
+    "styled-flexbox",
+    "flex-gap",
+    "gap"
+  ]
 }
