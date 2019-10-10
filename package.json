@@ -7,12 +7,13 @@
   "scripts": {
     "build": "rollup --config",
     "build:watch": "npm run build -- -w",
+    "codecov": "codecov",
+    "lint": "eslint . --ext .js,.jsx,.json",
+    "lint:precommit": "eslint --ext .js,.jsx,.json",
+    "release": "np --no-yarn --no-cleanup --no-2fa",
     "test": "jest --coverage --runInBand",
     "test:ci": "jest --ci --runInBand --coverage --reporters=default --reporters=jest-junit",
-    "lint": "eslint . --ext .js,.jsx,.json",
-    "codecov": "codecov",
-    "test:precommit": "jest --passWithNoTests --bail --findRelatedTests",
-    "lint:precommit": "eslint --ext .js,.jsx,.json"
+    "test:precommit": "jest --passWithNoTests --bail --findRelatedTests"
   },
   "author": {
     "name": "Piyush Lodaya",
