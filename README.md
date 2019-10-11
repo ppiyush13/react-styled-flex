@@ -11,8 +11,8 @@ Simple, light, unopionated, CSS standard compliant Flexbox component for [react]
 *   **Small and dependency free**, ~4 KB minified or ~1.7 KB minified + gzipped.
 *   **Clean underlying HTML DOM**. No prop leakage to DOM.
 *   Supports [flex-gap][flex-gap] feature. For non supported browsers, it degrades gracefully by applying appropriate margin properties.
-*   [Supports rendering](change-underlying-element) of any react component or html element.
-*   [Supports unitless values](supports-unitless-values) wherever required.
+*   [Supports rendering](#change-underlying-element) of any react component or html element.
+*   [Supports unitless values](#supports-unitless-values) wherever required.
 
 ### Install
 ```javascript
@@ -49,7 +49,7 @@ On rendering `Layout` component,
     *   Second nested child will have style `flex: 1;` 
 
 For rendering elements other than divs, please refer [Change underlying element
-](change-underlying-element) section. 
+](#change-underlying-element) section. 
 
 ### Props
 
