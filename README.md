@@ -27,7 +27,7 @@ npm i react-styled-flex
 *   **react-styled-flex** exports two components: `FlexBox` and `FlexItem`.
 *   `FlexBox` behaves as a container with `display: flex` rule. 
 *   `FlexItem` as acts as a child for `FlexBox`. Though `FlexBox` can have other components as child as well. 
-*   Only use `FlexItem` if you need to provide additional styles to child components. See [Props](props) section for more details.
+*   Only use `FlexItem` if you need to provide additional styles to child components. See [Props](#props) section for more details.
 *   `FlexItem` can be treated as `FlexBox` for nested childs by setting `box` prop as `true` on `FlexItem`
 
 ### Usage
