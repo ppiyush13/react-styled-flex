@@ -1,5 +1,7 @@
 # react-styled-flex
-  
+
+[![bundlephobia minified size][size-min]][bundlephobia-url]
+[![bundlephobia minizipped size][size-minzip]][bundlephobia-url]
 [![Codacy Badge][codacy]][codacy-url]
 [![CircleCI][build]][build-url]
 [![codecov][coverage]][coverage-url]
@@ -8,7 +10,7 @@
 Simple, light, unopionated, CSS standard compliant Flexbox component for [react][react-git] using [styled-components][styled-components-git]
 
 ### Features
-*   **Small and dependency free**, ~4 KB minified or ~1.7 KB minified + gzipped.
+*   **Small and dependency free**, ~3 KB minified or ~1.4 KB minified + gzipped.
 *   **Clean underlying HTML DOM**. No prop leakage to DOM.
 *   Supports [flex-gap][flex-gap] feature. For non supported browsers, it degrades gracefully by applying appropriate margin properties.
 *   [Supports rendering](#change-underlying-element) of any react component or html element.
@@ -124,6 +126,9 @@ For rendering elements other than divs, please refer [Change underlying element
 *   [A Complete Guide to Flexbox][flex-guide-css-tricks]
 *   [CSS Flexible Box Layout][flex-guide-mdn]
 
+[size-min]: https://img.shields.io/bundlephobia/min/react-styled-flex
+[size-minzip]: https://img.shields.io/bundlephobia/minzip/react-styled-flex
+[bundlephobia-url]: https://bundlephobia.com/result?p=react-styled-flex
 [codacy]: https://api.codacy.com/project/badge/Grade/3883d0db80a44fa6b18a311be25a8553
 [codacy-url]: https://www.codacy.com/manual/ppiyush13/react-styled-flex?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ppiyush13/react-styled-flex&amp;utm_campaign=Badge_Grade
 [build]: https://circleci.com/gh/ppiyush13/react-styled-flex/tree/master.svg?style=shield
