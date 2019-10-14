@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import cleanElement from '../src/cleanElement';
 
 describe('Test suites for cleanElement module', () => {
@@ -59,5 +59,16 @@ describe('Test suites for cleanElement module', () => {
         expect(cheerioWrapper.attr('enabled')).toEqual('true');
         expect(cheerioWrapper.attr('type')).toEqual('primary');
         expect(cheerioWrapper.attr('height')).toEqual('50px'); // height prop was missed from the cleanElement method
+    });
+});
+
+describe('testing reference behavior of cleanElement wrapper', () => {
+    it('should apply the ref', () => {
+        const reference = React.createRef();
+        const CleanDiv = cleanElement();
+        mount(
+            <CleanDiv ref={reference}/>,
+        );
+        expect(reference.current).not.toEqual(undefined);
     });
 });
