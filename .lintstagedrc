@@ -1,6 +1,5 @@
 {
     "*.{js,jsx,json}": [
-        "npm run test:precommit",
-        "npm run lint:precommit"
+        "npm run test:precommit"
     ],
 }

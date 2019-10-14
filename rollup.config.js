@@ -31,9 +31,9 @@ export default [
             }),
             nodeResolve(),
             commonJs(),
-            terser({
-                sourcemap: false,
-            }),
+            /* terser({
+                sourcemap: true,
+            }), */
         ],
     },
 ];
