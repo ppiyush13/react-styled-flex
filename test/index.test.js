@@ -26,8 +26,21 @@ describe('testing flexBox component', () => {
         expect(flexContainer.getDOMNode().childElementCount).toEqual(3);
     });
 
-    it('should render clean html dom node, without leaking any prop', () => {
-        const component = mount(<FlexBox center reverse>Centered</FlexBox>);
+    it('should render clean html dom node, without leaking any prop for FlexBox', () => {
+        const component = mount(<FlexBox center reverse wrap wrapReverse inline>Centered</FlexBox>);
+        expect(component.find('div').getDOMNode().attributes.length).toEqual(1);
+    });
+
+    it('should render clean html dom node, without leaking any prop for FlexItem', () => {
+        const component = mount(<FlexItem
+            center
+            reverse
+            wrap
+            wrapReverse
+            inline
+            box>
+                Centered
+        </FlexItem>);
         expect(component.find('div').getDOMNode().attributes.length).toEqual(1);
     });
 
