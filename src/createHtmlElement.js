@@ -7,7 +7,7 @@ const assignStyle = (elem, obj) => {
     }
 };
 
-const createElementsFromJSON = (json, parent) => {
+function createElementsFromJSON(json, parent) {
     if (Array.isArray(json)) {
         json.forEach(childJson => createElementsFromJSON(childJson, parent));
     }
@@ -42,7 +42,7 @@ const createElementsFromJSON = (json, parent) => {
         });
         parent.appendChild(elem);
     }
-};
+}
 
 export { assignStyle };
 
