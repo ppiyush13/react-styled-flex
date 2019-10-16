@@ -3,4 +3,7 @@
         "npm run test:precommit",
         "npm run lint:precommit"
     ],
+    "*.md": [
+        "npm run lint-md"
+    ]
 }

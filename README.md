@@ -10,14 +10,14 @@
 
 Simple, light, unopionated, CSS standard compliant Flexbox component for [react][react-git] using [styled-components][styled-components-git]
 
-### Features
+## Features
 *   **Small and dependency free**, ~3 KB minified or ~1.4 KB minified + gzipped.
 *   **Clean underlying HTML DOM**. No prop leakage to DOM.
 *   Supports [flex-gap][flex-gap] feature. For non supported browsers, it degrades gracefully by applying appropriate margin properties.
 *   [Supports rendering](#change-underlying-element) of any react component or html element.
 *   [Supports unitless values](#supports-unitless-values) wherever required.
 
-### Install
+## Install
 ```javascript
 yarn add react-styled-flex
 or
@@ -26,14 +26,14 @@ npm i react-styled-flex
 
 **react-styled-flex** requires peer dependencies [react][react-npm] and [styled-components][styled-components-npm]. You need to add them separately. 
 
-### API
+## API
 *   **react-styled-flex** exports two components: `FlexBox` and `FlexItem`.
 *   `FlexBox` behaves as a container with `display: flex` rule. 
 *   `FlexItem` as acts as a child for `FlexBox`. Though `FlexBox` can have other components as child as well. 
 *   Only use `FlexItem` if you need to provide additional styles to child components. See [Props](#props) section for more details.
 *   `FlexItem` can be treated as `FlexBox` for nested childs by setting `box` prop as `true` on `FlexItem`
 
-### Usage
+## Usage
 **react-styled-flex** exports two components: **FlexBox** and **FlexItem**. 
 Both renders simple div with passed styles derived from passed props. 
 
@@ -54,9 +54,9 @@ On rendering `Layout` component,
 For rendering elements other than divs, please refer [Change underlying element
 ](#change-underlying-element) section. 
 
-### Props
+## Props
 
-#### FlexBox
+### FlexBox
 
 |Props|Type|Description|
 |---|:---:|---|
@@ -78,7 +78,7 @@ For rendering elements other than divs, please refer [Change underlying element
 |alignItems|*string*|Applies `align-items` rule. Depending on the browser, [these align-items][align-items-mdn] values might be supported.|
 |alignContent|*string*|Applies `align-content` rule. Depending on the browser, [these align-content][align-content-mdn] values might be supported.|
 
-#### FlexItem
+### FlexItem
 |Props|Type|Description|
 |---|:---:|---|
 |flex|*integer&nbsp;&vert;&nbsp;string*|Applies flex using CSS [flex][flex-prop-mdn] shorthand specification.|
@@ -89,12 +89,12 @@ For rendering elements other than divs, please refer [Change underlying element
 |alignSelf|*string*|Applies `align-self` rule. Depending on the browser, [these align-self][align-self-mdn] values might be supported.|
 |box|*boolean*|If true, then FlexItem also behaves as a FlexBox. So in addition to FlexItem props, all the FlexBox props can also be applied.<br/>Default: *false*|
 
-### Supports unitless values
+## Supports unitless values
 *   **react-styled-flex** supports unitless values where units are required. In that case value will be auto suffixed with with `px` unit.<br/>
 *   Only values where unites are required(eg. **height, width, margin**) will be suffixed. 
 *   CSS rules which don't have units won't be suffixed (eg. **order**)
 
-### Supports flex gap feature
+## Supports flex gap feature
 *   Browser supports flex gap feature
     *   If [flex gap feature][flex-gap] is supported in browser than gap, columnGap and rowGap props will function as per specification.
 
@@ -103,7 +103,7 @@ For rendering elements other than divs, please refer [Change underlying element
 	*   If **wrap** is set then gap wont work in non-supported browser.
 	*   Rest all props are supported. 
 
-### Change underlying element
+## Change underlying element
 *   By default `FlexBox` and `FlexItem` renders div in the DOM.
 
 *   We can change it to any HTML element or react component using `is` prop.
@@ -123,7 +123,7 @@ For rendering elements other than divs, please refer [Change underlying element
 
 *   Please don't use `as` prop, provided by **styled-components**, to change underlying DOM element. Element would be changed but it will leak props to the DOM.
 
-### Resources
+## Resources
 *   [A Complete Guide to Flexbox][flex-guide-css-tricks]
 *   [CSS Flexible Box Layout][flex-guide-mdn]
 
