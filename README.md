@@ -1,5 +1,6 @@
 # react-styled-flex
 
+[![module verion and npm link][npm]][npm-url]
 [![bundlephobia minified size][size-min]][bundlephobia-url]
 [![bundlephobia minizipped size][size-minzip]][bundlephobia-url]
 [![Codacy Badge][codacy]][codacy-url]
@@ -126,6 +127,8 @@ For rendering elements other than divs, please refer [Change underlying element
 *   [A Complete Guide to Flexbox][flex-guide-css-tricks]
 *   [CSS Flexible Box Layout][flex-guide-mdn]
 
+[npm]: https://img.shields.io/npm/v/react-styled-flex
+[npm-url]: https://www.npmjs.com/package/react-styled-flex
 [size-min]: https://img.shields.io/bundlephobia/min/react-styled-flex
 [size-minzip]: https://img.shields.io/bundlephobia/minzip/react-styled-flex
 [bundlephobia-url]: https://bundlephobia.com/result?p=react-styled-flex
