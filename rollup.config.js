@@ -12,7 +12,7 @@ export default [
             {
                 file: pkg.module,
                 format: 'esm',
-				sourcemap: true,
+                sourcemap: true,
             },
             {
                 file: pkg.main,
@@ -24,7 +24,7 @@ export default [
         ],
         external: Object.keys(pkg.peerDependencies),
         plugins: [
-			sourcemaps(),
+            sourcemaps(),
             nodeResolve(),
             babel({
                 babelHelpers: 'bundled',
