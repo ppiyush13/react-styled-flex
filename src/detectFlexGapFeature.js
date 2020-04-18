@@ -34,7 +34,7 @@ export default memoize(() => {
         Detection code
     */
     const tempFragment = createHtmlElement(htmlJson);
-    const testNode = tempFragment.children[0];
+    const testNode = tempFragment.childNodes[0];
     /*
         Create temp html node for feature detection
     */
