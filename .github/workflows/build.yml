@@ -21,6 +21,6 @@ jobs:
         with:
           node-version: '14.x'
       - run: npm ci
-      - run: npm lint:code:ci
-      - run: npm test:ci
+      - run: npm run lint:code:ci
+      - run: npm run test:ci
       - run: npm run build
