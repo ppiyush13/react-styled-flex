@@ -1,39 +1,47 @@
 {
-    "extends": "airbnb-base",
-    "plugins": ["react", "json"],
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "node": true,
-        "jest": true
-    },
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+        "airbnb-base",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:json/recommended"
+    ],
+    "plugins": [
+        "@typescript-eslint",
+        "react-hooks"
+    ],
     "parserOptions": {
-        "ecmaVersion": 2018,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "jsx": true
-        }
+        "ecmaVersion": 2020,
+        "sourceType": "module"
     },
     "rules": {
         "indent": ["error", 4],
         "linebreak-style": ["error", "windows"],
         "arrow-parens": ["error", "as-needed"],
-        "brace-style": ["error", "stroustrup"],
-        "complexity": ["warn", 10],
+        "brace-style": ["error", "stroustrup", { "allowSingleLine": true }],
         "object-curly-newline": [
             "error",
             {
                 "consistent": true
             }
         ],
-        "react/jsx-uses-react": "error",   
-        "react/jsx-uses-vars": "error",
+        "no-use-before-define": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "react/prop-types": "off",
+        "import/extensions": "off",
+        "import/no-unresolved": "off",
         "import/no-extraneous-dependencies": [
             "error", 
             {
-                "peerDependencies": true,
-                "devDependencies": ["**/*.test.js", "setupTests.js", "rollup.config.js"]
+                "devDependencies": true
             }
         ]
+    },
+    "settings": {
+        "react": {
+            "pragma": "React",
+            "version": "detect"
+        }
     }
 }
