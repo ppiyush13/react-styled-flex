@@ -146,6 +146,3 @@ export const FlexItem = styled(Box).withConfig({
 Box.displayName = 'Box';
 FlexBox.displayName = 'FlexBox';
 FlexItem.displayName = 'FlexItem';
-
-
-

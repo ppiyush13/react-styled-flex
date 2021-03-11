@@ -14,7 +14,7 @@
         "build:dts": "rollup --config",
         "codecov": "codecov",
         "lint": "run-s lint:*",
-        "lint:code": "eslint --ext .js,.ts,.jsx,.tsx,.json",
+        "lint:code": "eslint . --ext .js,.ts,.jsx,.tsx,.json --fix",
         "lint:md": "remark .",
         "release": "run-s build publish",
         "publish": "np --no-yarn --no-cleanup --no-2fa",
