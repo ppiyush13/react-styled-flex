@@ -1,9 +1,0 @@
-{
-    "*.{js,ts,jsx,tsx,json}": [
-        "npm run test:precommit",
-        "npm run lint"
-    ],
-    "*.md": [
-        "npm run lint-md"
-    ]
-}
