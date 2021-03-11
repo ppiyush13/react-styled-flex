@@ -1,4 +1,4 @@
-name: Build test
+name: lint,test,build,publish
 
 # Run this workflow every time a new commit pushed to your repository
 on: push
@@ -8,7 +8,7 @@ jobs:
   # when a job name is not provided
   test:
     # Name the Job
-    name: Build and test code
+    name: "Job: Build and test"
     # Set the type of machine to run on
     runs-on: ubuntu-latest
 
