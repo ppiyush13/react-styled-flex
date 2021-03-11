@@ -1,5 +1,5 @@
 import dts from "rollup-plugin-dts";
-import pkg from './load-package-json.cjs';
+import pkg from './rollup.load-package-json.cjs';
 
 export default [
     {

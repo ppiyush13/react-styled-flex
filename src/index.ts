@@ -52,7 +52,7 @@ const boxProps = ['height', 'width', 'margin', 'padding', 'border'];
 const flexBoxKeys = ['inline', 'wrap', 'reverse', 'wrapReverse', 'column', 'center', 'justifyContent', 'justifyItems', 'alignItems', 'alignContent', 'gap', 'columnGap', 'rowGap'];
 const flexItemProps = ['box', 'order', 'grow', 'shrink', 'basis', 'flex', 'alignSelf', 'justifySelf'].concat(flexBoxKeys);
 
-const boxModelStyles = (props: BoxProps) => ({
+const boxModelStyles = (props: BoxProps): CSSObject => ({
     height: props.height,
     width: props.width,
     margin: props.margin,
@@ -60,7 +60,7 @@ const boxModelStyles = (props: BoxProps) => ({
     border: props.border,
 });
 
-const flexStyles = (props: FlexBoxProps) => {
+const flexStyles = (props: FlexBoxProps): CSSObject => {
     const { inline, wrapReverse, alignContent, justifyItems, column, reverse,
         wrap, gap, columnGap, rowGap, center } = props;
     const display = inline
@@ -118,7 +118,7 @@ const flexStyles = (props: FlexBoxProps) => {
     return result;
 };
 
-const flexItemStyles = (props: FlexItemIntrinsicProps) => ({
+const flexItemStyles = (props: FlexItemIntrinsicProps): CSSObject => ({
     order: props.order,
     flex: props.flex,
     alignSelf: props.alignSelf,
@@ -126,7 +126,7 @@ const flexItemStyles = (props: FlexItemIntrinsicProps) => ({
     flexBasis: props.basis,
     flexShrink: props.shrink,
     flexGrow: props.grow,
-} as CSSObject);
+});
 
 export const Box = styled('div').withConfig({
     shouldForwardProp: prop => boxProps.indexOf(prop) === -1,
@@ -142,3 +142,17 @@ export const FlexItem = styled(Box).withConfig({
     flexItemStyles,
     props => (props.box ? flexStyles : ''),
 );
+
+Box.displayName = 'Box';
+FlexBox.displayName = 'FlexBox';
+FlexItem.displayName = 'FlexItem';
+
+
+
+
+
+
+
+
+
+
