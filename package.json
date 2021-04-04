@@ -1,6 +1,6 @@
 {
     "name": "react-styled-flex",
-    "version": "1.0.19",
+    "version": "2.0.0-rc.0",
     "description": "Simple, light, unopinionated, css standard compliant Flexbox component for React using Styled Components",
     "keywords": [
         "react-styled-flex",
