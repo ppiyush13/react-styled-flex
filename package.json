@@ -47,7 +47,7 @@
         "lint:code": "run-s \"lint:code:ci -- --fix\"",
         "lint:code:ci": "eslint . --ext .js,.ts,.jsx,.tsx,.json",
         "lint:md": "remark .",
-        "publish": "alpha",
+        "release": "alpha",
         "test": "jest --coverage --runInBand",
         "test:ci": "jest --ci --runInBand --coverage --reporters=default --reporters=jest-junit"
     },
