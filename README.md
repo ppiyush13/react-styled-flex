@@ -8,7 +8,7 @@
 [![codecov][coverage]][coverage-url]
 [![Greenkeeper badge][greenkeeper]][greenkeeper-url]
 
-Simple, light, unopionated, CSS standard compliant Flexbox component for [react][react-git] using [styled-components][styled-components-git]
+Simple, light, unopinionated, CSS standard compliant Flexbox component for [react][react-git] using [styled-components][styled-components-git]
 
 ## Features
 *   **Small and dependency free**, ~3 KB minified or ~1.4 KB minified + gzipped.
