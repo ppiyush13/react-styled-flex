@@ -40,7 +40,8 @@ export const App = () => {
     );
 };
 
-const Header = styled(FlexBox).withConfig({ displayName: 'Header' })`
+// TODO: Add withConfig({ displayName: "Header" })
+const Header = styled(FlexBox)`
     height: 4rem;
     background-color: #20232a;
 `;
