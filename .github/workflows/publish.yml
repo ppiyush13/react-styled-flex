@@ -28,7 +28,7 @@ jobs:
     - run: git config --global user.name "AL5[bot]"
     - run: git config --global user.email "81697243+al5-bot@users.noreply.github.com"
     - run: npm version -s ${{github.event.release.tag_name}}
-    - run: npm lint:code:ci
+    - run: npm run lint:code:ci
       env:
         BRANCH_NAME: ${{github.event.release.target_commitish}}
         TAG_NAME: ${{github.event.release.tag_name}}
