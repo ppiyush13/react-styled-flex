@@ -1,4 +1,4 @@
-name: NPM publish CD workflow
+name: NPM Publish
 
 on:
   release:
