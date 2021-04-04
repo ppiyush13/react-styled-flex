@@ -2,11 +2,40 @@
     "name": "react-styled-flex",
     "version": "1.0.19",
     "description": "Simple, light, unopionated, css standard compliant Flexbox component for React using Styled Components",
-    "source": "./src/index.ts",
+    "keywords": [
+        "react-styled-flex",
+        "react",
+        "styled-componenets",
+        "styled",
+        "flexbox",
+        "flex",
+        "react-flex",
+        "styled-flex",
+        "react-flexbox",
+        "styled-flexbox",
+        "flex-gap",
+        "gap"
+    ],
+    "homepage": "https://github.com/ppiyush13/react-styled-flex",
+    "bugs": {
+        "url": "https://github.com/ppiyush13/react-styled-flex/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ppiyush13/react-styled-flex.git"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Piyush Lodaya",
+        "email": "ppiyush13@gmail.com"
+    },
+    "exports": "./dist/react-styled-flex.modern.js",
     "main": "./dist/react-styled-flex.cjs.js",
     "module": "./dist/react-styled-flex.esm.js",
-    "exports": "./dist/react-styled-flex.modern.js",
-    "dts": "./dist/index.d.ts",
+    "source": "./src/index.ts",
+    "files": [
+        "dist"
+    ],
     "scripts": {
         "build": "run-s build:*",
         "build:clean": "rimraf dist",
@@ -23,22 +52,6 @@
         "test:ci": "jest --ci --runInBand --coverage --reporters=default --reporters=jest-junit",
         "test:precommit": "jest --passWithNoTests --bail --findRelatedTests"
     },
-    "author": {
-        "name": "Piyush Lodaya",
-        "email": "ppiyush13@gmail.com"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/ppiyush13/react-styled-flex.git"
-    },
-    "bugs": {
-        "url": "https://github.com/ppiyush13/react-styled-flex/issues"
-    },
-    "homepage": "https://github.com/ppiyush13/react-styled-flex",
-    "files": [
-        "dist"
-    ],
-    "license": "MIT",
     "devDependencies": {
         "@testing-library/jest-dom": "^5.11.9",
         "@testing-library/react": "^11.2.5",
@@ -78,18 +91,5 @@
         "react": ">=16.0.0",
         "styled-components": ">=5.1.0"
     },
-    "keywords": [
-        "react-styled-flex",
-        "react",
-        "styled-componenets",
-        "styled",
-        "flexbox",
-        "flex",
-        "react-flex",
-        "styled-flex",
-        "react-flexbox",
-        "styled-flexbox",
-        "flex-gap",
-        "gap"
-    ]
+    "dts": "./dist/index.d.ts"
 }
