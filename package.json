@@ -47,8 +47,7 @@
         "lint:code": "run-s \"lint:code:ci -- --fix\"",
         "lint:code:ci": "eslint . --ext .js,.ts,.jsx,.tsx,.json",
         "lint:md": "remark .",
-        "release": "run-s build release:np",
-        "release:np": "np --no-yarn --no-cleanup --no-2fa",
+        "release": "alpha",
         "test": "jest --coverage --runInBand",
         "test:ci": "jest --ci --runInBand --coverage --reporters=default --reporters=jest-junit"
     },
@@ -62,6 +61,7 @@
         "@types/testing-library__react": "^10.2.0",
         "@typescript-eslint/eslint-plugin": "^4.20.0",
         "@typescript-eslint/parser": "^4.20.0",
+        "alpha-ci": "^0.0.0",
         "codecov": "^3.8.1",
         "eslint": "^7.23.0",
         "eslint-config-airbnb-base": "^14.2.1",
