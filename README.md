@@ -19,11 +19,12 @@ This is `react-styled-flex@2` documentation. For version 1, please follow [this]
 
 **🚀 Enhancements**
 * Typescript rewrite.
+* ~20% lightweight than version 1.
 * Supports SSR and SSG rendering.
-* Introduce [Box](#Box) component. 
+* Introduces [Box](#Box) component.
 * Uses `styled-components` [shouldForwardProp][styled-components-should-forward-prop] mechanism to avoid leaking props to DOM. As a result, `is` prop from version 1 is no longer supported. 
 ## Features
-*   **Lightweight and dependency free**, ~3 KB minified or ~1.4 KB minified + gzipped.
+*   **Lightweight and dependency free**, ~2.4 KB minified or ~1.1 KB minified + gzipped.
 *   **Clean underlying HTML DOM**. No prop leakage to DOM.
 *   Supports [flex-gap][flex-gap] feature. For non supported browsers, it degrades gracefully by applying appropriate margin properties.
 *   [Supports rendering](#change-underlying-element) of any react component or html element.
