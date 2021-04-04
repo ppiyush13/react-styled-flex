@@ -1,5 +1,5 @@
-import React from "react"
-import { createGlobalStyle } from "styled-components"
+import React from 'react';
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
     html {
@@ -19,5 +19,5 @@ export default function Layout({ children }: { children: React.ReactElement }) {
             <GlobalStyle />
             {children}
         </React.Fragment>
-    )
+    );
 }

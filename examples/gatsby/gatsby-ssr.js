@@ -1,5 +1,5 @@
 exports.onRenderBody = ({ setBodyAttributes }) => {
     setBodyAttributes({
-        className: 'flex-gap-not-supported'
+        className: 'flex-gap-not-supported',
     });
 };
