@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import styled, { CSSProperties, CSSObject } from 'styled-components';
 import { FLEX_GAP_NOT_SUPPORTED, FLEX_GAP_SUPPORTED } from './constants';
-import './detectFlexGapFeature';
+import './detect-flex-gap-support';
 
 export interface BoxProps {
     height?: CSSProperties['height'],

@@ -1,7 +1,7 @@
-import mockComputedStyles from './util/mockComputedStyles';
+import mockComputedStyles from './util/mock-computed-styles';
 import { FLEX_GAP_NOT_SUPPORTED, FLEX_GAP_SUPPORTED } from '../src/constants';
 
-describe('testing detectFlexGapFeature module', () => {
+describe('testing detect-flex-gap-support module', () => {
     afterEach(() => jest.resetModules());
     afterEach(() => jest.restoreAllMocks());
 
@@ -13,7 +13,7 @@ describe('testing detectFlexGapFeature module', () => {
         const restoreComputedStyles = mockComputedStyles({ width });
 
         /* require actual module */
-        jest.requireActual('../src/detectFlexGapFeature');
+        jest.requireActual('../src/detect-flex-gap-support');
 
         /* assert */
         expect(document.body.classList.toString()).toBe(expectedClass);
