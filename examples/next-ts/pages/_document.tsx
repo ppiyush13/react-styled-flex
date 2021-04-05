@@ -31,7 +31,9 @@ export default class MyDocument extends Document {
     render() {
         return (
             <Html>
-                <Head />
+                <Head>
+                    <link rel="shortcut icon" href="https://nextjs.org/static/favicon/favicon.ico" />
+                </Head>
                 <body className={'flex-gap-not-supported'}>
                     <Main />
                     <NextScript />
