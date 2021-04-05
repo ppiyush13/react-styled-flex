@@ -6,11 +6,13 @@ const App = () => (
         <Header as={'header'} center>
             <a
                 href={'https://nextjs.org/docs'}
+                title={'Next.Js documentation'}
                 target={'_blank'}
                 rel={"noreferrer"}
             >
                 <img 
                     src={'/logo.png'}
+                    alt={'next.js logo'}
                     width={82} 
                     height={40} 
                 />
