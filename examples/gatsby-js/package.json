@@ -1,8 +1,8 @@
 {
     "name": "gatsby-js",
-    "description": "Example repo for react-styled-flex using gatsby",
     "version": "1.0.0",
     "private": true,
+    "description": "Example repo for react-styled-flex using gatsby",
     "license": "0BSD",
     "author": {
         "name": "Piyush Lodaya",
@@ -28,12 +28,5 @@
         "gatsby-plugin-styled-components": "^4.2.0",
         "prettier": "2.2.1",
         "styled-components": "^5.2.3"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
-    },
-    "bugs": {
-        "url": "https://github.com/gatsbyjs/gatsby/issues"
     }
 }
