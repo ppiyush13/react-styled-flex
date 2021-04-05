@@ -9,10 +9,10 @@ const App = () => (
         <div>
             <Header as={'header'} center >
                 <a
-                    href={'https://www.gatsbyjs.com/docs/'} 
+                    href={'https://www.gatsbyjs.com/docs/'}
                     title={'Gatsby documentation'}
                     target={'_blank'}
-                    rel={"noreferrer"}
+                    rel={'noreferrer'}
                 >
                     <img
                         src={logoSrc}
