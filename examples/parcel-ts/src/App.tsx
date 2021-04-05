@@ -5,26 +5,26 @@ import { Box, FlexBox, FlexItem } from 'react-styled-flex';
 export const App = () => (
     <div>
         <Header as={'header'} center>
-            <FlexBox 
-                as={'a'} 
-                gap={10} 
-                alignItems={'center'} 
+            <FlexBox
+                as={'a'}
+                gap={10}
+                alignItems={'center'}
                 href={'https://v2.parceljs.org/'}
                 title={'Parcel documentation'}
                 target={'_blank'}
-                rel={"noreferrer"}
+                rel={'noreferrer'}
             >
-                <img 
+                <img
                     src={'https://v2.parceljs.org/assets/parcel.png'}
                     alt={'parcel logo image'}
-                    height={30} 
+                    height={30}
                     width={38}
                 />
-                <img 
-                    src={'https://v2.parceljs.org/assets/logo.svg'} 
+                <img
+                    src={'https://v2.parceljs.org/assets/logo.svg'}
                     alt={'parcel logo text'}
-                    height={160} 
-                    width={120} 
+                    height={160}
+                    width={120}
                 />
             </FlexBox>
         </Header>
@@ -69,4 +69,3 @@ const NormalChild = styled.div`
     border: 1px dashed blue;
     padding: 2px 1rem;
 `;
-

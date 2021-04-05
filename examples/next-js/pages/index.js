@@ -8,13 +8,13 @@ const App = () => (
                 href={'https://nextjs.org/docs'}
                 title={'Next.Js documentation'}
                 target={'_blank'}
-                rel={"noreferrer"}
+                rel={'noreferrer'}
             >
-                <img 
+                <img
                     src={'/logo.png'}
                     alt={'next.js logo'}
-                    width={82} 
-                    height={40} 
+                    width={82}
+                    height={40}
                 />
             </a>
         </Header>
