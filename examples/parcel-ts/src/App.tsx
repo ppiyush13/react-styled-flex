@@ -10,6 +10,8 @@ export const App = () => (
                 gap={10} 
                 alignItems={'center'} 
                 href={'https://v2.parceljs.org/'}
+                target={'_blank'}
+                rel={"noreferrer"}
             >
                 <img 
                     height={30} 
