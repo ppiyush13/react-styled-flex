@@ -10,16 +10,19 @@ export const App = () => (
                 gap={10} 
                 alignItems={'center'} 
                 href={'https://v2.parceljs.org/'}
+                title={'Parcel documentation'}
                 target={'_blank'}
                 rel={"noreferrer"}
             >
                 <img 
+                    src={'https://v2.parceljs.org/assets/parcel.png'}
+                    alt={'parcel logo image'}
                     height={30} 
                     width={38}
-                    src={'https://v2.parceljs.org/assets/parcel.png'} 
                 />
                 <img 
                     src={'https://v2.parceljs.org/assets/logo.svg'} 
+                    alt={'parcel logo text'}
                     height={160} 
                     width={120} 
                 />
