@@ -1,7 +1,13 @@
 {
-    "name": "with-typescript",
+    "name": "next-ts",
     "version": "1.0.0",
-    "license": "MIT",
+    "private": true,
+    "description": "Example repo for react-styled-flex using next-js with typescript",
+    "license": "0BSD",
+    "author": {
+        "name": "Piyush Lodaya",
+        "email": "ppiyush13@gmail.com"
+    },
     "scripts": {
         "dev": "next",
         "build": "next build && next export",

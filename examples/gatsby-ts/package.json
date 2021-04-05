@@ -1,9 +1,13 @@
 {
-    "name": "gatsby-starter-hello-world",
+    "name": "gatsby-ts",
+    "version": "1.0.0",
     "private": true,
-    "description": "A simplified bare-bones starter for Gatsby",
-    "version": "0.1.0",
+    "description": "Example repo for react-styled-flex using gatsby with typescript",
     "license": "0BSD",
+    "author": {
+        "name": "Piyush Lodaya",
+        "email": "ppiyush13@gmail.com"
+    },
     "scripts": {
         "build": "gatsby build",
         "develop": "gatsby develop",
