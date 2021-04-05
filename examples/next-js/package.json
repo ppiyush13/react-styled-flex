@@ -9,10 +9,8 @@
         "email": "ppiyush13@gmail.com"
     },
     "scripts": {
-        "dev": "next",
-        "build": "next build && next export",
-        "start": "next start",
-        "prod": "next export"
+        "start": "next",
+        "build": "next build && next export"
     },
     "dependencies": {
         "next": "^10.1.3",

@@ -9,13 +9,10 @@
         "email": "ppiyush13@gmail.com"
     },
     "scripts": {
+        "start": "gatsby develop",
         "build": "gatsby build",
-        "develop": "gatsby develop",
-        "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-        "start": "npm run develop",
         "serve": "gatsby serve",
-        "clean": "gatsby clean",
-        "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+        "clean": "gatsby clean"
     },
     "dependencies": {
         "react": "^17.0.2",
@@ -26,7 +23,6 @@
     "devDependencies": {
         "babel-plugin-styled-components": "^1.12.0",
         "gatsby": "^3.2.1",
-        "gatsby-plugin-styled-components": "^4.2.0",
-        "prettier": "2.2.1"
+        "gatsby-plugin-styled-components": "^4.2.0"
     }
 }
