@@ -12,7 +12,7 @@
         "dev": "next",
         "build": "next build && next export",
         "start": "next start",
-        "prod": "next export" 
+        "prod": "next export"
     },
     "dependencies": {
         "next": "^10.1.3",

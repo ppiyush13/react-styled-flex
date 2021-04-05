@@ -1,15 +1,9 @@
 {
     "name": "create-react-app-ts",
     "version": "1.0.0",
-    "description": "Example repo for react-styled-flex using create-react-app with typescript",
     "private": true,
+    "description": "Example repo for react-styled-flex using create-react-app with typescript",
     "license": "0BSD",
-    "dependencies": {
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "react-styled-flex": "^2.0.0-rc.0",
-        "styled-components": "^5.2.3"
-    },
     "author": {
         "name": "Piyush Lodaya",
         "email": "ppiyush13@gmail.com"
@@ -19,12 +13,6 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
-    },
-    "eslintConfig": {
-        "extends": [
-            "react-app",
-            "react-app/jest"
-        ]
     },
     "browserslist": {
         "production": [
@@ -37,6 +25,18 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "dependencies": {
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-styled-flex": "^2.0.0-rc.0",
+        "styled-components": "^5.2.3"
     },
     "devDependencies": {
         "@types/node": "^14.14.37",
