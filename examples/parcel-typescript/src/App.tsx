@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Box, FlexBox, FlexItem } from 'react-styled-flex';
 
-type A = typeof Box;
-
 export const App = () => (
     <div>
         <Header as={'header'} center>
