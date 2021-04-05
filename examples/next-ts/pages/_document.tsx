@@ -33,6 +33,7 @@ export default class MyDocument extends Document {
             <Html>
                 <Head>
                     <link rel="shortcut icon" href="https://nextjs.org/static/favicon/favicon.ico" />
+                    <title>react-styled-flex using NextJs</title>
                 </Head>
                 <body className={'flex-gap-not-supported'}>
                     <Main />
