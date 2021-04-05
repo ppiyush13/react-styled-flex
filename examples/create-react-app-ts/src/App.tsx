@@ -1,12 +1,27 @@
 import styled from 'styled-components';
 import { Box, FlexBox, FlexItem } from 'react-styled-flex';
-import logo from './logo.svg';
 
 export const App = () => {
     return (
         <div>
             <Header as={'header'} center >
-                <ReactLogo src={logo} alt="logo" />
+                <FlexBox
+                    center
+                    gap={'0.5rem'}
+                    as={Link} 
+                    href={'https://create-react-app.dev/'}
+                    title={'Create-react-app documentation'}
+                    target={'_blank'}
+                    rel={"noreferrer"}
+                >
+                    <img 
+                        src={'https://create-react-app.dev/img/logo.svg'}
+                        alt={'create-react-app logo'}
+                        height={34}
+                        width={36}
+                    />
+                    <strong>Create React App</strong>
+                </FlexBox>
             </Header>
             <FlexBox column gap={32} padding={'2rem'}>
                 <NormalChild >Normal Child</NormalChild>
@@ -40,23 +55,15 @@ export const App = () => {
     );
 };
 
-// TODO: Add withConfig({ displayName: "Header" })
 const Header = styled(FlexBox)`
     height: 4rem;
-    background-color: #20232a;
+    background-color: #242526;
 `;
 
-const ReactLogo = styled.img`
-    height: 3rem;
-    animation: App-logo-spin infinite 20s linear;
-    @keyframes App-logo-spin {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
+const Link = styled.a`
+    text-decoration: none;
+    color: rgb(245, 246, 247);
+    font-weight: 700;
 `;
 
 const NormalChild = styled.div`

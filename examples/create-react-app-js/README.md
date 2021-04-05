@@ -1,6 +1,6 @@
 # Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) to demonstrate `react-styled-flex` package.
+This project was bootstrapped with [Create React App](https://create-react-app.dev/) to demonstrate `react-styled-flex` package.
 
 ## 🧰 Available Scripts
 
