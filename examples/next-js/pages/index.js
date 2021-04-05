@@ -3,8 +3,18 @@ import { Box, FlexBox, FlexItem } from 'react-styled-flex';
 
 const App = () => (
     <div>
-        <Header as={'header'} center >
-                Next.js
+        <Header as={'header'} center>
+            <a
+                href={'https://nextjs.org/docs'}
+                target={'_blank'}
+                rel={"noreferrer"}
+            >
+                <img 
+                    src={'/logo.png'}
+                    width={82} 
+                    height={40} 
+                />
+            </a>
         </Header>
         <FlexBox column gap={32} padding={'2rem'}>
             <NormalChild >Normal Child</NormalChild>
@@ -39,7 +49,7 @@ const App = () => (
 
 const Header = styled(FlexBox)`
     height: 4rem;
-    background-color: #0070f3;
+    background-color: #f3f2f1;
     color: white;
 `;
 
