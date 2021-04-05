@@ -1,14 +1,17 @@
 {
-    "name": "parcel-app",
+    "name": "parcel-js",
     "version": "1.0.0",
-    "description": "",
+    "private": true,
+    "description": "Example repo for react-styled-flex using parcel",
+    "license": "0BSD",
+    "author": {
+        "name": "Piyush Lodaya",
+        "email": "ppiyush13@gmail.com"
+    },
     "scripts": {
         "start": "parcel serve ./src/index.html",
         "build": "parcel build ./src/index.html --dist-dir build"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
     "dependencies": {
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
