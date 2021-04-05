@@ -2,12 +2,23 @@ import React from 'react';
 import styled from 'styled-components';
 import { Box, FlexBox, FlexItem } from 'react-styled-flex';
 import Layout from '../components/layout';
+import logoSrc from '../assets/logo.svg';
 
 const App = () => (
     <Layout>
         <div>
             <Header as={'header'} center >
-                    Gatsby
+                <a
+                    href={'https://www.gatsbyjs.com/docs/'} 
+                    title={'Gatsby documentation'}
+                    target={'_blank'}
+                    rel={"noreferrer"}
+                >
+                    <img
+                        src={logoSrc}
+                        alt={'gatsby logo'}
+                    />
+                </a>
             </Header>
             <FlexBox column gap={32} padding={'2rem'}>
                 <NormalChild >Normal Child</NormalChild>
@@ -43,7 +54,7 @@ const App = () => (
 
 const Header = styled(FlexBox)`
     height: 4rem;
-    background-color: #663399;
+    background-color: #f6edfa;
     color: white;
 `;
 
