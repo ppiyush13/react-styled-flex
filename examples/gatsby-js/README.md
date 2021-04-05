@@ -26,3 +26,7 @@ Deletes following directories:
 *   public
 *   node_modules\.cache\babel-loader
 *   node_modules\.cache\terser-webpack-plugin
+
+## 🥂 License
+
+This repository is licensed under the **Zero-Clause BSD** license. This means that you can see this file as a placeholder and replace it with your own license.
