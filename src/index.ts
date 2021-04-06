@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import styled, { CSSProperties, CSSObject } from 'styled-components';
-import { FLEX_GAP_NOT_SUPPORTED, FLEX_GAP_SUPPORTED } from './constants';
+import { FlexGapSupportedClassName, FlexGapNotSupportedClassName } from './constants';
 import './detect-flex-gap-support';
 
 export interface BoxProps {
@@ -45,8 +45,8 @@ export type FlexItemProps =
         | { box?: true} & FlexBoxProps & FlexItemIntrinsicProps
         | { box?: false } & FlexItemIntrinsicProps;
 
-const FlexSupportedClass = `.${FLEX_GAP_SUPPORTED} &&`;
-const FlexNotSupportedClass = `.${FLEX_GAP_NOT_SUPPORTED} &&`;
+const FlexGapSupportedIdentifier = `.${FlexGapSupportedClassName} &&`;
+const FlexGapNotSupportedIdentifier = `.${FlexGapNotSupportedClassName} &&`;
 
 const boxProps = ['height', 'width', 'margin', 'padding', 'border'];
 const flexBoxKeys = ['inline', 'wrap', 'reverse', 'wrapReverse', 'column', 'center', 'justifyContent', 'justifyItems', 'alignItems', 'alignContent', 'gap', 'columnGap', 'rowGap'];
@@ -94,7 +94,7 @@ const flexStyles = (props: FlexBoxProps): CSSObject => {
     };
 
     if (gap || columnGap || rowGap) {
-        result[FlexSupportedClass] = {
+        result[FlexGapSupportedIdentifier] = {
             gap, rowGap, columnGap,
         };
         if (wrap) {
@@ -107,7 +107,7 @@ const flexStyles = (props: FlexBoxProps): CSSObject => {
             const marginProp = column ? 'bottom' : 'right';
             const child = reverse ? 'first' : 'last';
             const gapProp = (column ? rowGap : columnGap) || gap;
-            result[FlexNotSupportedClass] = {
+            result[FlexGapNotSupportedIdentifier] = {
                 [`& > :not(:${child}-child)`]: {
                     [`margin-${marginProp}`]: gapProp,
                 },
@@ -145,3 +145,5 @@ export const FlexItem = styled(Box).withConfig({
     flexItemStyles,
     props => (props.box ? flexStyles : ''),
 );
+
+export { FlexGapSupportedClassName, FlexGapNotSupportedClassName };

@@ -1,2 +1,2 @@
-export const FLEX_GAP_SUPPORTED = 'flex-gap-supported';
-export const FLEX_GAP_NOT_SUPPORTED = 'flex-gap-not-supported';
+export const FlexGapSupportedClassName: string = 'flex-gap-supported';
+export const FlexGapNotSupportedClassName: string = 'flex-gap-not-supported';

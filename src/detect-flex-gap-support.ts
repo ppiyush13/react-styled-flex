@@ -1,4 +1,4 @@
-import { FLEX_GAP_NOT_SUPPORTED, FLEX_GAP_SUPPORTED } from './constants';
+import { FlexGapNotSupportedClassName, FlexGapSupportedClassName } from './constants';
 
 if (typeof document !== 'undefined') {
     const htmlDocument = document;
@@ -27,11 +27,11 @@ if (typeof document !== 'undefined') {
     };
 
     if (flexGapSupported()) {
-        bodyClassList.add(FLEX_GAP_SUPPORTED);
-        bodyClassList.remove(FLEX_GAP_NOT_SUPPORTED);
+        bodyClassList.add(FlexGapSupportedClassName);
+        bodyClassList.remove(FlexGapNotSupportedClassName);
     }
     else {
-        bodyClassList.add(FLEX_GAP_NOT_SUPPORTED);
-        bodyClassList.remove(FLEX_GAP_SUPPORTED);
+        bodyClassList.add(FlexGapNotSupportedClassName);
+        bodyClassList.remove(FlexGapSupportedClassName);
     }
 }

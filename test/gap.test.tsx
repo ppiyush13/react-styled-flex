@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { FlexBox, FlexItem } from '../src';
-import { FLEX_GAP_NOT_SUPPORTED, FLEX_GAP_SUPPORTED } from '../src/constants';
+import { FlexGapNotSupportedClassName, FlexGapSupportedClassName } from '../src/constants';
 
 const gapCases = [
     [{ gap: '5px' }, 'gap: 5px', 'margin-right: 5px', 'child-1'],
@@ -11,13 +11,13 @@ const gapCases = [
 ] as const;
 
 const addFlexSupport = () => {
-    document.body.classList.add(FLEX_GAP_SUPPORTED);
-    document.body.classList.remove(FLEX_GAP_NOT_SUPPORTED);
+    document.body.classList.add(FlexGapSupportedClassName);
+    document.body.classList.remove(FlexGapNotSupportedClassName);
 };
 
 const removeFlexSupport = () => {
-    document.body.classList.remove(FLEX_GAP_SUPPORTED);
-    document.body.classList.add(FLEX_GAP_NOT_SUPPORTED);
+    document.body.classList.remove(FlexGapSupportedClassName);
+    document.body.classList.add(FlexGapNotSupportedClassName);
 };
 
 describe('testing gap property on FlexBox', () => {
