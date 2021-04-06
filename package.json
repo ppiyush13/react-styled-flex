@@ -29,8 +29,8 @@
         "name": "Piyush Lodaya",
         "email": "ppiyush13@gmail.com"
     },
-    "exports": "./dist/react-styled-flex.modern.js",
     "main": "./dist/react-styled-flex.cjs.js",
+    "unpkg": "./dist/react-styled-flex.umd.js",
     "module": "./dist/react-styled-flex.esm.js",
     "source": "./src/index.ts",
     "types": "./dist/index.d.ts",
@@ -40,7 +40,7 @@
     "scripts": {
         "build": "run-s build:*",
         "build:clean": "rimraf dist",
-        "build:code": "microbundle --no-compress",
+        "build:code": "microbundle --no-compress --format es,cjs,umd",
         "build:types": "rollup --config",
         "codecov": "codecov",
         "lint": "run-s lint:*",
