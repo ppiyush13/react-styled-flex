@@ -14,15 +14,15 @@ Simple, light, unopinionated, CSS standard compliant Flexbox component for [reac
 This is `react-styled-flex@2` documentation. For version 1, please follow [this][version-1-docs] link. Following changes are introduced in version 2: 
 
 **✂️ Breaking changes**
-* `is` prop of FlexBox and FlexItem component is longer supported. Instead use native styled-components ["as" polymorphic prop][styled-components-as-prop] to render another react component or html element.
-* Supports `styled-components` version greater than or equal to `>=5.1.0`. If you want to use older versions of `styled-components`, please install `react-styled-flex` version 1 by using `npm install react-styled-flex@latest-1` command.
+*   `is` prop of FlexBox and FlexItem component is longer supported. Instead use native styled-components ["as" polymorphic prop][styled-components-as-prop] to render another react component or html element.
+*   Supports `styled-components` version greater than or equal to `>=5.1.0`. If you want to use older versions of `styled-components`, please install `react-styled-flex` version 1 by using `npm install react-styled-flex@latest-1` command.
 
 **🚀 Enhancements**
-* Typescript rewrite.
-* ~20% lightweight than version 1.
-* Supports SSR and SSG rendering.
-* Introduces [Box](#Box) component.
-* Uses `styled-components` [shouldForwardProp][styled-components-should-forward-prop] mechanism to avoid leaking props to DOM. As a result, `is` prop from version 1 is no longer supported. 
+*   Typescript rewrite.
+*   ~20% lightweight than version 1.
+*   Supports SSR and SSG rendering.
+*   Introduces [Box](#Box) component.
+*   Uses `styled-components` [shouldForwardProp][styled-components-should-forward-prop] mechanism to avoid leaking props to DOM. As a result, `is` prop from version 1 is no longer supported. 
 ## Features
 *   **Lightweight and dependency free**, ~2.4 KB minified or ~1.1 KB minified + gzipped.
 *   **Clean underlying HTML DOM**. No prop leakage to DOM.
@@ -187,8 +187,6 @@ MIT © Piyush Lodaya
 [build-url]: https://circleci.com/gh/ppiyush13/react-styled-flex/tree/master
 [coverage]: https://codecov.io/gh/ppiyush13/react-styled-flex/branch/master/graph/badge.svg
 [coverage-url]: https://codecov.io/gh/ppiyush13/react-styled-flex
-[greenkeeper]: https://badges.greenkeeper.io/ppiyush13/react-styled-flex.svg
-[greenkeeper-url]: https://greenkeeper.io/
 [styled-components-git]: https://github.com/styled-components/styled-components
 [react-git]: https://github.com/facebook/react
 [flex-gap]: https://developer.mozilla.org/en-US/docs/Web/CSS/gap#Flex_layout
