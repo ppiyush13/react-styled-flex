@@ -29,7 +29,7 @@
         "name": "Piyush Lodaya",
         "email": "ppiyush13@gmail.com"
     },
-    "main": "./dist/react-styled-flex.cjs.js",
+    "main": "./dist/react-styled-flex.js",
     "unpkg": "./dist/react-styled-flex.umd.js",
     "module": "./dist/react-styled-flex.esm.js",
     "source": "./src/index.ts",
