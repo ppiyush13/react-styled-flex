@@ -129,20 +129,19 @@ const flexItemStyles = (props: FlexItemIntrinsicProps): CSSObject => ({
 });
 
 export const Box = styled('div').withConfig({
+    displayName: 'Box',
     shouldForwardProp: prop => boxProps.indexOf(prop) === -1,
 })<BoxProps>(boxModelStyles);
 
 export const FlexBox = styled(Box).withConfig({
+    displayName: 'FlexBox',
     shouldForwardProp: prop => flexBoxKeys.indexOf(prop) === -1,
 })<FlexBoxProps>(flexStyles);
 
 export const FlexItem = styled(Box).withConfig({
+    displayName: 'FlexItem',
     shouldForwardProp: prop => flexItemProps.indexOf(prop) === -1,
 })<FlexItemProps>(
     flexItemStyles,
     props => (props.box ? flexStyles : ''),
 );
-
-Box.displayName = 'Box';
-FlexBox.displayName = 'FlexBox';
-FlexItem.displayName = 'FlexItem';
