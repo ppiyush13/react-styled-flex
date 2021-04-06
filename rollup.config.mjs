@@ -6,7 +6,7 @@ export default [
         input: pkg.source,
         output: [
             {
-                file: pkg.dts,
+                file: pkg.types,
                 format: "es",
             }
         ],

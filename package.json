@@ -33,7 +33,7 @@
     "main": "./dist/react-styled-flex.cjs.js",
     "module": "./dist/react-styled-flex.esm.js",
     "source": "./src/index.ts",
-    "dts": "./dist/index.d.ts",
+    "types": "./dist/index.d.ts",
     "files": [
         "dist"
     ],
@@ -41,7 +41,7 @@
         "build": "run-s build:*",
         "build:clean": "rimraf dist",
         "build:code": "microbundle --no-compress",
-        "build:dts": "rollup --config",
+        "build:types": "rollup --config",
         "codecov": "codecov",
         "lint": "run-s lint:*",
         "lint:code": "run-s \"lint:code:ci -- --fix\"",
