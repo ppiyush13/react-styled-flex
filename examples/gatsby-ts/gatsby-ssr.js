@@ -1,8 +1,9 @@
 const React = require('react');
+const { FlexGapNotSupportedClassName } = require('react-styled-flex');
 
 exports.onRenderBody = ({ setBodyAttributes, setHeadComponents }) => {
     setBodyAttributes({
-        className: 'flex-gap-not-supported',
+        className: FlexGapNotSupportedClassName,
     });
     setHeadComponents([
         <React.Fragment key={'head'}>
