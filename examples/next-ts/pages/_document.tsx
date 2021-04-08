@@ -1,6 +1,6 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
-
 import { ServerStyleSheet } from 'styled-components';
+import { FlexGapNotSupportedClassName } from 'react-styled-flex';
 
 export default class MyDocument extends Document {
     static async getInitialProps(ctx: DocumentContext) {
@@ -35,7 +35,7 @@ export default class MyDocument extends Document {
                     <link rel="shortcut icon" href="https://nextjs.org/static/favicon/favicon.ico" />
                     <title>react-styled-flex using NextJs</title>
                 </Head>
-                <body className={'flex-gap-not-supported'}>
+                <body className={FlexGapNotSupportedClassName}>
                     <Main />
                     <NextScript />
                 </body>
