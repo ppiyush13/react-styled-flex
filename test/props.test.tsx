@@ -3,6 +3,7 @@ import { render } from '@testing-library/react';
 import { Box, FlexBox, FlexItem } from '../src';
 
 const boxCases = [
+    [{ sizing: 'content-box' }, 'box-sizing: content-box'],
     [{ height: '15px' }, 'height: 15px'],
     [{ width: '100%' }, 'width: 100%'],
     [{ margin: '2rem 0.5rem' }, 'margin: 2rem 0.5rem'],

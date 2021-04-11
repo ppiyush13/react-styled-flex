@@ -4,6 +4,7 @@ import { FlexGapSupportedClassName, FlexGapNotSupportedClassName } from './const
 import './detect-flex-gap-support';
 
 export interface BoxProps {
+    sizing?: CSSProperties['boxSizing'],
     height?: CSSProperties['height'],
     width?: CSSProperties['width'],
     margin?: CSSProperties['margin'],
@@ -48,11 +49,12 @@ export type FlexItemProps =
 const FlexGapSupportedIdentifier = `.${FlexGapSupportedClassName} &&`;
 const FlexGapNotSupportedIdentifier = `.${FlexGapNotSupportedClassName} &&`;
 
-const boxProps = ['height', 'width', 'margin', 'padding', 'border'];
+const boxProps = ['sizing', 'height', 'width', 'margin', 'padding', 'border'];
 const flexBoxKeys = ['inline', 'wrap', 'reverse', 'wrapReverse', 'column', 'center', 'justifyContent', 'justifyItems', 'alignItems', 'alignContent', 'gap', 'columnGap', 'rowGap'];
 const flexItemProps = ['box', 'order', 'grow', 'shrink', 'basis', 'flex', 'alignSelf', 'justifySelf'].concat(flexBoxKeys);
 
 const boxModelStyles = (props: BoxProps): CSSObject => ({
+    boxSizing: props.sizing,
     height: props.height,
     width: props.width,
     margin: props.margin,

@@ -8,6 +8,7 @@ const assert = (element: Element) => {
 };
 
 const boxParams = {
+    sizing: 'border-box',
     height: '50px',
     width: '100%',
     margin: '2rem auto',
