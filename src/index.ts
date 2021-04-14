@@ -3,6 +3,9 @@ import styled, { CSSProperties, CSSObject } from 'styled-components';
 import { FlexGapSupportedClassName, FlexGapNotSupportedClassName } from './constants';
 import './detect-flex-gap-support';
 
+type Never<T> = { 
+    [P in keyof T] ?: never;
+};
 export interface BoxProps {
     sizing?: CSSProperties['boxSizing'],
     height?: CSSProperties['height'],
@@ -43,8 +46,8 @@ export interface FlexItemIntrinsicProps {
 }
 
 export type FlexItemProps =
-        | { box?: true} & FlexBoxProps & FlexItemIntrinsicProps
-        | { box?: false } & FlexItemIntrinsicProps;
+    | FlexItemIntrinsicProps & { box: true} & FlexBoxProps
+    | FlexItemIntrinsicProps & { box?: false } & Never<FlexBoxProps>;
 
 const FlexGapSupportedIdentifier = `.${FlexGapSupportedClassName} &&`;
 const FlexGapNotSupportedIdentifier = `.${FlexGapNotSupportedClassName} &&`;
