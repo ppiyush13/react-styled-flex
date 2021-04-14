@@ -1,53 +1,7 @@
-import { ReactNode } from 'react';
 import styled, { CSSProperties, CSSObject } from 'styled-components';
 import { FlexGapSupportedClassName, FlexGapNotSupportedClassName } from './constants';
 import './detect-flex-gap-support';
-
-type Never<T> = {
-    [P in keyof T] ?: never;
-};
-export interface BoxProps {
-    sizing?: CSSProperties['boxSizing'],
-    height?: CSSProperties['height'],
-    width?: CSSProperties['width'],
-    margin?: CSSProperties['margin'],
-    padding?: CSSProperties['padding'],
-    border?: CSSProperties['border'],
-    children?: ReactNode,
-}
-
-export interface FlexBoxProps {
-    inline?: boolean,
-    wrap?: boolean,
-    wrapReverse?: boolean,
-    column?: boolean,
-    reverse?: boolean,
-    center?: boolean,
-    justifyItems?: CSSProperties['justifyItems'],
-    justifyContent?: CSSProperties['justifyContent'],
-    alignItems?: CSSProperties['alignItems'],
-    alignContent?: CSSProperties['alignContent'],
-    gap?: CSSProperties['gap'],
-    columnGap?: CSSProperties['columnGap'],
-    rowGap?: CSSProperties['rowGap'],
-    children?: ReactNode,
-}
-
-export interface FlexItemIntrinsicProps {
-    box?: boolean,
-    order?: CSSProperties['order'],
-    grow?: CSSProperties['flexGrow'],
-    shrink?: CSSProperties['flexShrink'],
-    basis?: CSSProperties['flexBasis'],
-    flex?: CSSProperties['flex'],
-    alignSelf?: CSSProperties['alignSelf'],
-    justifySelf?: CSSProperties['justifySelf'],
-    children?: ReactNode,
-}
-
-export type FlexItemProps =
-    | FlexItemIntrinsicProps & { box: true} & FlexBoxProps
-    | FlexItemIntrinsicProps & { box?: false } & Never<FlexBoxProps>;
+import { BoxProps, FlexBoxProps, FlexItemProps, FlexItemBaseProps } from './types';
 
 const FlexGapSupportedIdentifier = `.${FlexGapSupportedClassName} &&`;
 const FlexGapNotSupportedIdentifier = `.${FlexGapNotSupportedClassName} &&`;
@@ -123,7 +77,7 @@ const flexStyles = (props: FlexBoxProps): CSSObject => {
     return result;
 };
 
-const flexItemStyles = (props: FlexItemIntrinsicProps): CSSObject => ({
+const flexItemStyles = (props: FlexItemBaseProps): CSSObject => ({
     order: props.order,
     flex: props.flex,
     alignSelf: props.alignSelf,
@@ -152,3 +106,4 @@ export const FlexItem = styled(Box).withConfig({
 );
 
 export { FlexGapSupportedClassName, FlexGapNotSupportedClassName };
+export { BoxProps, FlexBoxProps, FlexItemProps };
