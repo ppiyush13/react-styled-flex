@@ -78,6 +78,7 @@ describe('testing all the exports of react-styled-flex', () => {
     it.each([
         ...flexBoxCases,
     ])('flexItem: should not apply flexBox props when box is false, with %o props', (props, styleMatch) => {
+        // @ts-expect-error: flex-box props cannot be applied to FlexItem without box set to true
         const { container } = render(<FlexItem {...props} />);
         expect(container.firstChild).not.toHaveStyle(styleMatch);
     });

@@ -3,7 +3,7 @@ import styled, { CSSProperties, CSSObject } from 'styled-components';
 import { FlexGapSupportedClassName, FlexGapNotSupportedClassName } from './constants';
 import './detect-flex-gap-support';
 
-type Never<T> = { 
+type Never<T> = {
     [P in keyof T] ?: never;
 };
 export interface BoxProps {
