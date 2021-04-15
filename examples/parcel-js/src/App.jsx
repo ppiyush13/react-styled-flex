@@ -4,7 +4,7 @@ import { Box, FlexBox, FlexItem } from 'react-styled-flex';
 
 export const App = () => (
     <div>
-        <Header as={'header'} center>
+        <Header as={'header'} center maxHeight={'4rem'}>
             <FlexBox
                 as={'a'}
                 gap={10}
@@ -31,6 +31,7 @@ export const App = () => (
         <FlexBox column gap={32} padding={'2rem'}>
             <NormalChild >Normal Child</NormalChild>
             <Box
+                sizing={'border-box'}
                 padding={'2px 1rem'}
                 border={'1px dashed crimson'}
             >
@@ -60,7 +61,6 @@ export const App = () => (
 );
 
 const Header = styled(FlexBox)`
-    height: 4rem;
     background-color: #21374b;
     color: white;
 `;

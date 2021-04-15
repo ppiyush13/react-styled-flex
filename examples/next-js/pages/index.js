@@ -3,7 +3,7 @@ import { Box, FlexBox, FlexItem } from 'react-styled-flex';
 
 const App = () => (
     <div>
-        <Header as={'header'} center>
+        <Header as={'header'} center minHeight={'4rem'}>
             <a
                 href={'https://nextjs.org/docs'}
                 title={'Next.Js documentation'}
@@ -21,6 +21,7 @@ const App = () => (
         <FlexBox column gap={32} padding={'2rem'}>
             <NormalChild >Normal Child</NormalChild>
             <Box
+                sizing={'border-box'}
                 padding={'2px 1rem'}
                 border={'1px dashed crimson'}
             >
@@ -50,7 +51,6 @@ const App = () => (
 );
 
 const Header = styled(FlexBox)`
-    height: 4rem;
     background-color: #f3f2f1;
     color: white;
 `;

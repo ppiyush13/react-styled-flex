@@ -7,7 +7,7 @@ import logoSrc from '../assets/logo.svg';
 const App = () => (
     <Layout>
         <div>
-            <Header as={'header'} center >
+            <Header as={'header'} center minHeight={'4rem'}>
                 <a
                     href={'https://www.gatsbyjs.com/docs/'}
                     title={'Gatsby documentation'}
@@ -23,6 +23,7 @@ const App = () => (
             <FlexBox column gap={32} padding={'2rem'}>
                 <NormalChild >Normal Child</NormalChild>
                 <Box
+                    sizing={'border-box'}
                     padding={'2px 1rem'}
                     border={'1px dashed crimson'}
                 >
@@ -53,7 +54,6 @@ const App = () => (
 );
 
 const Header = styled(FlexBox)`
-    height: 4rem;
     background-color: #f6edfa;
     color: white;
 `;
