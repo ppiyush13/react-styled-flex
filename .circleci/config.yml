@@ -38,7 +38,7 @@ jobs:
       # run tests!
       - run:
           name: Run tests with JUnit as reporter
-          command: npm run test:ci
+          command: npm run test:env:ci
           environment:
             JEST_JUNIT_OUTPUT_DIR: reports/jest
             JEST_JUNIT_OUTPUT_NAME: js-test-results.xml
