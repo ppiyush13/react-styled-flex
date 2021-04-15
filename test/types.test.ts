@@ -31,6 +31,17 @@ describe('testing react-styled-flex types', () => {
         expectType<TypeOf<FlexItemProps, { shrink: 0, inline: true }>>(false);
     });
 
+});
+
+describe('testing key list', () => {
+
+    /**
+     * In order to avoid leaking props to dom, manual list of props are maintained which are passed
+     * to shouldForwardProps API to avoid passing props.
+     * These lists are maintained manually as of now. Below test cases will start failing when 
+     * any of the list and respective interface are out of sync.
+     */
+
     it('should fail case when any new prop is added to BoxProps interface and not added to boxPropsArr list', () => {
         expectType<TypeEqual<
             typeof boxPropsArr[number],
@@ -51,4 +62,5 @@ describe('testing react-styled-flex types', () => {
             Exclude<keyof FlexItemBaseProps, 'children'>
         >>(true);
     });
+
 });

@@ -10,7 +10,11 @@ const assert = (element: Element) => {
 const boxParams = {
     sizing: 'border-box',
     height: '50px',
+    minHeight: '100vh',
+    maxHeight: 100,
     width: '100%',
+    minWidth: '30rem',
+    maxWidth: '60ch',
     margin: '2rem auto',
     padding: '10px 15px 0px 15px',
     border: '1px solid #000',

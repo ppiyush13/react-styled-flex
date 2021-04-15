@@ -5,7 +5,11 @@ import { Box, FlexBox, FlexItem } from '../src';
 const boxCases = [
     [{ sizing: 'content-box' }, 'box-sizing: content-box'],
     [{ height: '15px' }, 'height: 15px'],
+    [{ maxHeight: '100vh' }, 'max-height: 100vh'],
+    [{ minHeight: 100 }, 'min-height: 100px'],
     [{ width: '100%' }, 'width: 100%'],
+    [{ maxWidth: '10rem' }, 'max-width: 10rem'],
+    [{ minWidth: '60ch' }, 'min-width: 60ch'],
     [{ margin: '2rem 0.5rem' }, 'margin: 2rem 0.5rem'],
     [{ margin: 5 }, 'margin: 5px'],
     [{ padding: '15px 10px 5px 0px' }, 'padding: 15px 10px 5px 0px'],

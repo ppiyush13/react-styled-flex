@@ -8,7 +8,11 @@ type Never<T> = {
 export interface BoxProps {
     sizing?: CSSProperties['boxSizing'],
     height?: CSSProperties['height'],
+    maxHeight?: CSSProperties['maxHeight'];
+    minHeight?: CSSProperties['minHeight'];
     width?: CSSProperties['width'],
+    maxWidth?: CSSProperties['maxWidth'],
+    minWidth?: CSSProperties['minWidth'],
     margin?: CSSProperties['margin'],
     padding?: CSSProperties['padding'],
     border?: CSSProperties['border'],
