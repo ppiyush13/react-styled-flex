@@ -50,8 +50,7 @@
         "release": "alpha",
         "test": "run-s test:*",
         "test:types": "tsc --noEmit",
-        "test:code": "jest --coverage --runInBand",
-        "test:env:ci": "jest --ci --runInBand --coverage --reporters=default --reporters=jest-junit"
+        "test:code": "jest --coverage"
     },
     "devDependencies": {
         "@testing-library/jest-dom": "^5.11.10",

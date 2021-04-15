@@ -1,6 +1,16 @@
 module.exports = {
     preset: 'ts-jest',
     testEnvironment: 'jsdom',
+    reporters: [
+        'default',
+        [
+            'jest-junit',
+            {
+                outputDirectory: 'reports/jest',
+                outputName: 'js-test-results.xml',
+            },
+        ],
+    ],
     setupFilesAfterEnv: [
         '<rootDir>/test-setup.ts',
     ],
