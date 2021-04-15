@@ -1,14 +1,10 @@
 import styled, { CSSProperties, CSSObject } from 'styled-components';
-import { FlexGapSupportedClassName, FlexGapNotSupportedClassName } from './constants';
+import { FlexGapSupportedClassName, FlexGapNotSupportedClassName, boxProps, flexBoxProps, flexItemProps } from './constants';
 import './detect-flex-gap-support';
 import { BoxProps, FlexBoxProps, FlexItemProps, FlexItemBaseProps } from './types';
 
 const FlexGapSupportedIdentifier = `.${FlexGapSupportedClassName} &&`;
 const FlexGapNotSupportedIdentifier = `.${FlexGapNotSupportedClassName} &&`;
-
-const boxProps = ['sizing', 'height', 'width', 'margin', 'padding', 'border'];
-const flexBoxKeys = ['inline', 'wrap', 'reverse', 'wrapReverse', 'column', 'center', 'justifyContent', 'justifyItems', 'alignItems', 'alignContent', 'gap', 'columnGap', 'rowGap'];
-const flexItemProps = ['box', 'order', 'grow', 'shrink', 'basis', 'flex', 'alignSelf', 'justifySelf'].concat(flexBoxKeys);
 
 const boxModelStyles = (props: BoxProps): CSSObject => ({
     boxSizing: props.sizing,
@@ -94,7 +90,7 @@ export const Box = styled('div').withConfig({
 
 export const FlexBox = styled(Box).withConfig({
     displayName: 'FlexBox',
-    shouldForwardProp: prop => flexBoxKeys.indexOf(prop) === -1,
+    shouldForwardProp: prop => flexBoxProps.indexOf(prop) === -1,
 })<FlexBoxProps>(flexStyles);
 
 export const FlexItem = styled(Box).withConfig({

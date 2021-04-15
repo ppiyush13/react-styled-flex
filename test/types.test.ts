@@ -1,5 +1,6 @@
-import { expectType, TypeOf } from 'ts-expect';
-import { BoxProps, FlexBoxProps, FlexItemProps } from '../src';
+import { expectType, TypeOf, TypeEqual } from 'ts-expect';
+import { boxPropsArr, flexBoxPropsArr, flexItemPropsArr } from '../src/constants';
+import { BoxProps, FlexBoxProps, FlexItemProps, FlexItemBaseProps } from '../src/types';
 
 describe('testing react-styled-flex types', () => {
     test('testing BoxProps type', () => {
@@ -28,5 +29,26 @@ describe('testing react-styled-flex types', () => {
 
         expectType<TypeOf<FlexItemProps, { flex: 1, gap: 100 }>>(false);
         expectType<TypeOf<FlexItemProps, { shrink: 0, inline: true }>>(false);
+    });
+
+    it('should fail case when any new prop is added to BoxProps interface and not added to boxPropsArr list', () => {
+        expectType<TypeEqual<
+            typeof boxPropsArr[number],
+            Exclude<keyof BoxProps, 'children'>
+        >>(true);
+    });
+
+    it('should fail case when any new prop is added to FlexBoxProps interface and not added to flexBoxPropsArr list', () => {
+        expectType<TypeEqual<
+            typeof flexBoxPropsArr[number],
+            Exclude<keyof FlexBoxProps, 'children'>
+        >>(true);
+    });
+
+    it('should fail when any new prop is added to FlexItemBaseProps interface and not added to flexItemPropsArr list', () => {
+        expectType<TypeEqual<
+            typeof flexItemPropsArr[number],
+            Exclude<keyof FlexItemBaseProps, 'children'>
+        >>(true);
     });
 });
