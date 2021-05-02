@@ -10,20 +10,23 @@
 
 Simple, light, unopinionated, CSS standard compliant Flexbox component for [react][react-git] using [styled-components][styled-components-git]
 
-## Changelog
-This is `react-styled-flex@2` documentation. For version 1, please follow [this][version-1-docs] link. Following changes are introduced in version 2: 
+## 🎏 Changelog
+This is `react-styled-flex@2` documentation. For version 1, please follow [this][version-1-docs] link. Following changes are introduced in v2: 
 
-**✂️ Breaking changes**
+### ✂️ Breaking changes
+
 *   `is` prop of FlexBox and FlexItem component is longer supported. Instead use native styled-components ["as" polymorphic prop][styled-components-as-prop] to render another react component or html element.
-*   Supports `styled-components` version greater than or equal to `>=5.1.0`. If you want to use older versions of `styled-components`, please install `react-styled-flex` version 1 by using `npm install react-styled-flex@latest-1` command.
+*   Supports `styled-components` version greater than or equal to `>=5.1.0`. If you want to use older versions of `styled-components`, please install `react-styled-flex` v1 by using `npm install react-styled-flex@latest-1` command.
 
-**🚀 Enhancements**
+### 🚀 Enhancements
+
 *   Typescript rewrite.
-*   ~20% lightweight than version 1.
+*   ~20% lightweight than v1.
 *   Supports SSR and SSG rendering.
 *   Introduces [Box](#Box) component.
-*   Uses `styled-components` [shouldForwardProp][styled-components-should-forward-prop] mechanism to avoid leaking props to DOM. As a result, `is` prop from version 1 is no longer supported. 
-## Features
+*   Uses `styled-components` [shouldForwardProp][styled-components-should-forward-prop] mechanism to avoid leaking props to DOM. As a result, `is` prop from v1 is no longer supported. 
+
+## 🔋 Features
 *   **Lightweight and dependency free**, ~2.4 KB minified or ~1.1 KB minified + gzipped.
 *   **Clean underlying HTML DOM**. No prop leakage to DOM.
 *   Supports [flex-gap][flex-gap] feature. For non supported browsers, it degrades gracefully by applying appropriate margin properties.
@@ -32,7 +35,7 @@ This is `react-styled-flex@2` documentation. For version 1, please follow [this]
 *   Supports SSR and SSG rendering.
 *   TypeScript support.
 
-## Installation
+## 💿 Installation
 Yarn
 ```sh
 yarn add react-styled-flex
@@ -44,7 +47,7 @@ npm i react-styled-flex
 
 **react-styled-flex** requires peer dependencies [react][react-npm] and [styled-components][styled-components-npm]. You need to add them separately. 
 
-## API
+## 🔌 API
 *   **react-styled-flex** exports three components: `Box`, `FlexBox` and `FlexItem`.
 *   `Box` behaves as basic CSS box. `FlexBox` and `FlexItem` extends `Box`.
 *   `FlexBox` behaves as a container with `display: flex` rule. 
@@ -52,7 +55,7 @@ npm i react-styled-flex
 *   Only use `FlexItem` if you need to provide additional styles to child components. See [Props](#props) section for more details.
 *   `FlexItem` can be treated as `FlexBox` for nested childs by setting `box` prop as `true` on `FlexItem`
 
-## Usage
+## 🕹 Usage
 **react-styled-flex** exports three components: **Box**, **FlexBox** and **FlexItem**. 
 All renders simple div with styles derived from passed props. 
 
@@ -78,7 +81,7 @@ On rendering `Layout` component,
 For rendering elements other than divs, please refer [Change underlying element
 ](#change-underlying-element) section. 
 
-## Props
+## 🎛 Props
 
 ### Box
 
@@ -137,7 +140,7 @@ All props are **optional**.
 |alignSelf|*string*|Applies `align-self` rule. Depending on the browser, [these align-self][align-self-mdn] values might be supported|
 |box|*boolean*|If true, then FlexItem also behaves as a FlexBox. In addition to FlexItem props, all the FlexBox props are applicable|
 
-## Features explained
+## 📽 Features explained
 
 ### Supports unitless values
 *   **react-styled-flex** supports unitless values where units are required. In that case value will be auto suffixed with with `px` unit.<br/>
@@ -170,7 +173,7 @@ import { FlexBox, FlexItem } from "react-styled-flex";
 
 Renders `Child 1` and `Child 2` as button. Similarly any react component can be rendered.
 
-## FAQ
+## ❓ FAQ
 
 ### Where can I find examples ?
 
@@ -238,10 +241,10 @@ Below are the fixes available for next.js and gatsby.
 
 You may also refer to examples directory for complete working demo. 
 
-## License
+## ⚖️ License
 MIT © Piyush Lodaya
 
-## Resources
+## 🗃 Resources
 *   [A Complete Guide to Flexbox][flex-guide-css-tricks]
 *   [CSS Flexible Box Layout][flex-guide-mdn]
 
