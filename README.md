@@ -60,11 +60,13 @@ All renders simple div with styles derived from passed props.
 import { Box, FlexBox, FlexItem } from "react-styled-flex";
 
 const Layout = () => {
-    return <FlexBox center>
-        <Box padding={10}>Child 1</Box>
-        <FlexItem>Child 2</FlexItem>
-        <FlexItem flex={1}>Child 3</FlexItem>
+  return (
+    <FlexBox center>
+      <Box padding={10}>Child 1</Box>
+      <FlexItem>Child 2</FlexItem>
+      <FlexItem flex={1}>Child 3</FlexItem>
     </FlexBox>
+  )
 }
 ```
 On rendering `Layout` component, 
@@ -84,22 +86,25 @@ All props are **optional**.
 
 |Props|Type|Description|
 |---|:---:|---|
-|height|*string&nbsp;&vert;&nbsp;number*|Applies height|
-|width|*string&nbsp;&vert;&nbsp;number*|Applies width|
+|sizing|*string*|Applies [box-sizing][box-sizing-mdn]|
+|position|*string*|Applies [position][position-mdn]|
+|height|*string&nbsp;&vert;&nbsp;number*|Applies [height][height-mdn]|
+|maxHeight|*string&nbsp;&vert;&nbsp;number*|Applies [max-height][max-height-mdn]|
+|minHeight|*string&nbsp;&vert;&nbsp;number*|Applies [min-height][min-height-mdn]|
+|width|*string&nbsp;&vert;&nbsp;number*|Applies [width][width-mdn]|
+|maxWidth|*string&nbsp;&vert;&nbsp;number*|Applies [max-width][max-width-mdn]|
+|minWidth|*string&nbsp;&vert;&nbsp;number*|Applies [min-width][min-width-mdn]|
 |margin|*string&nbsp;&vert;&nbsp;number*|Applies margin using CSS [margin][margin-mdn] shorthand specification|
 |padding|*string&nbsp;&vert;&nbsp;number*|Applies padding using CSS [padding][padding-mdn] shorthand specification|
 |border|*string&nbsp;&vert;&nbsp;number*|Applies border using CSS [border][border-mdn] shorthand specification|
 ### FlexBox
 
-All props are **optional** and all boolean props defaults to **false**.
+-   All props are **optional**.
+-   All boolean props defaults to **false**.
+-   All [Box](#box) props are also applicable.
 
 |Props|Type|Description|
 |---|:---:|---|
-|height|*string&nbsp;&vert;&nbsp;number*|Applies height|
-|width|*string&nbsp;&vert;&nbsp;number*|Applies width|
-|margin|*string&nbsp;&vert;&nbsp;number*|Applies margin using CSS [margin][margin-mdn] shorthand specification|
-|padding|*string&nbsp;&vert;&nbsp;number*|Applies padding using CSS [padding][padding-mdn] shorthand specification|
-|border|*string&nbsp;&vert;&nbsp;number*|Applies border using CSS [border][border-mdn] shorthand specification|
 |inline|*boolean*|If true, applies `display: inline-flex` rule otherwise applies `display: flex`|
 |column|*boolean*|If true, `flex-direction` rule is set as `column` otherwise set as `row`|
 |reverse|*boolean*|It works in tandem with `column` prop to generate `flex-direction: {row\|column}-reverse`. Following table summaries it,<br/>  <table><thead><tr><th>column</th><th>reverse</th><th>flex&minus;direction</th></tr></thead><tbody><tr><td>false</td><td>false</td><td>row</td></tr><tr><td>false</td><td>true</td><td>row-reverse</td></tr><tr><td>true</td><td>false</td><td>column</td></tr><tr><td>true</td><td>true</td><td>column-reverse</td></tr></tbody></table>|
@@ -116,15 +121,13 @@ All props are **optional** and all boolean props defaults to **false**.
 
 ### FlexItem
 
-All props are **optional** and all boolean props defaults to **false**.
+-   All props are **optional**.
+-   All boolean props defaults to **false**.
+-   All [Box](#box) props are also applicable.
+-   All [FlexBox](#flexBox) props are applicable if `box` prop is set to true.
 
 |Props|Type|Description|
 |---|:---:|---|
-|height|*string&nbsp;&vert;&nbsp;number*|Applies height|
-|width|*string&nbsp;&vert;&nbsp;number*|Applies width|
-|margin|*string&nbsp;&vert;&nbsp;number*|Applies margin using CSS [margin][margin-mdn] shorthand specification|
-|padding|*string&nbsp;&vert;&nbsp;number*|Applies padding using CSS [padding][padding-mdn] shorthand specification|
-|border|*string&nbsp;&vert;&nbsp;number*|Applies border using CSS [border][border-mdn] shorthand specification|
 |flex|*string&nbsp;&vert;&nbsp;number*|Applies flex using CSS [flex][flex-prop-mdn] shorthand specification|
 |grow|*string&nbsp;&vert;&nbsp;number*|Applies CSS [flex-grow][flex-grow-mdn] property|
 |shrink|*string&nbsp;&vert;&nbsp;number*|Applies CSS [flex-shrink][flex-shrink-mdn] property|
@@ -132,14 +135,16 @@ All props are **optional** and all boolean props defaults to **false**.
 |order|*string&nbsp;&vert;&nbsp;number*|Applies CSS [order][order-mdn] property|
 |justifySelf|*string*|Applies `justify-self` rule. Depending on the browser, [these justify-self][justify-self-mdn] values might be supported.|
 |alignSelf|*string*|Applies `align-self` rule. Depending on the browser, [these align-self][align-self-mdn] values might be supported|
-|box|*boolean*|If true, then FlexItem also behaves as a FlexBox. So in addition to FlexItem props, all the FlexBox props can also be applied|
+|box|*boolean*|If true, then FlexItem also behaves as a FlexBox. In addition to FlexItem props, all the FlexBox props are applicable|
 
-## Supports unitless values
+## Features explained
+
+### Supports unitless values
 *   **react-styled-flex** supports unitless values where units are required. In that case value will be auto suffixed with with `px` unit.<br/>
 *   Only values where unites are required(eg. **height, width, margin**) will be suffixed. 
 *   CSS rules which don't have units won't be suffixed (eg. **order**)
 
-## Supports flex gap feature
+### Supports flex gap feature
 *   Browser supports flex gap feature
     *   If [flex gap feature][flex-gap] is supported in browser than gap, columnGap and rowGap props will function as per specification.
 
@@ -148,25 +153,90 @@ All props are **optional** and all boolean props defaults to **false**.
 	*   If **wrap** is set then gap wont work in non-supported browser.
 	*   Rest all props are supported. 
 
-## Change underlying element
-*   By default `FlexBox` and `FlexItem` renders div in the DOM.
+### Change underlying element
+By default `FlexBox` and `FlexItem` renders div in the DOM. We can change it to any HTML element or react component using `styled-components` [as][styled-components-as-prop] prop.\
+Example:
 
-*   We can change it to any HTML element or react component using `styled-components` [as][styled-components-as-prop] prop.
+```jsx
+import { FlexBox, FlexItem } from "react-styled-flex";
 
-*   Example:
-    ```javascript
-    import { FlexBox, FlexItem } from "react-styled-flex";
+/* other logic */
 
-    /* other logic */
+<FlexBox center>
+  <FlexItem as={"button"}>Child 1</FlexItem>
+  <FlexItem as={"button"}>Child 2</FlexItem>
+</FlexBox>
+```
 
-    <FlexBox center>
-        <FlexItem as={"button"}>Child 1</FlexItem>
-        <FlexItem as={"button"}>Child 2</FlexItem>
-    </FlexBox>
-    ```
-    Render `Child 1` and `Child 2` as button
+Renders `Child 1` and `Child 2` as button. Similarly any react component can be rendered.
 
-*   Similarly any react component can be rendered
+## FAQ
+
+### Where can I find examples ?
+
+Working example of `react-styled-flex` with frameworks like `create-react-app`, `gatsby`, `next.js`, `parcel` can be found in [examples](/examples) directory of this repo. Both javascript and typescript variants are available. If any cool react framework is missing, raise a PR, we will be happy to get added.
+
+### Why unstyled content appears during initial page render ?
+
+In SSR or SSG rendering, web pages may [flash unstyled content][fouc] for brief moment of time when page layout is done using `react-styled-flex` `gap` prop. Though web page corrects itself as soon as react hydration runs, the shift may be distracting for end users.
+
+![fouc example](/assets/fouc.gif)
+
+In order to fix this issue, we have to provide css class `flex-gap-not-supported` to body tag.\
+Below are the fixes available for next.js and gatsby.
+
+<details>
+  <summary>next.js</summary>
+
+  Add custom `Document` to your application within `pages/_document.js`. Here is the minimal `_document` example
+
+  ```jsx
+  // pages/_document.js
+  import Document, { Html, Head, Main, NextScript } from 'next/document'
+  import { FlexGapNotSupportedClassName } from 'react-styled-flex';
+
+  export default class MyDocument extends Document {
+    static async getInitialProps(ctx) {
+      const initialProps = await Document.getInitialProps(ctx)
+      return { ...initialProps }
+    }
+
+    render() {
+      return (
+        <Html>
+          <Head />
+          <body className={FlexGapNotSupportedClassName}>
+            <Main />
+            <NextScript />
+          </body>
+        </Html>
+      )
+    }
+  }
+
+  ```
+</details>
+
+<details>
+  <summary>gatsby</summary>
+
+  Customize `gatsby-ssr.js` module to implement `onRenderBody` API. Minimal example is shown below:
+
+  ```jsx
+  // gatsby-ssr.js
+  const React = require('react');
+  const { FlexGapNotSupportedClassName } = require('react-styled-flex');
+
+  exports.onRenderBody = ({ setBodyAttributes }) => {
+      setBodyAttributes({
+      className: FlexGapNotSupportedClassName,
+      });
+  };
+
+  ```
+</details>
+
+You may also refer to examples directory for complete working demo. 
 
 ## License
 MIT © Piyush Lodaya
@@ -192,6 +262,14 @@ MIT © Piyush Lodaya
 [flex-gap]: https://developer.mozilla.org/en-US/docs/Web/CSS/gap#Flex_layout
 [styled-components-npm]: https://www.npmjs.com/package/styled-components
 [react-npm]: https://www.npmjs.com/package/react
+[box-sizing-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing#syntax
+[position-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/position#syntax
+[height-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/height#syntax
+[max-height-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/max-height#syntax
+[min-height-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/min-height#syntax
+[width-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/width#syntax
+[max-width-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/max-width#syntax
+[min-width-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/min-width#syntax
 [padding-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/padding#Syntax
 [margin-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/margin#Syntax
 [border-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/border#Syntax
@@ -214,3 +292,4 @@ MIT © Piyush Lodaya
 [version-1-docs]: https://github.com/ppiyush13/react-styled-flex/blob/v1/README.md
 [styled-components-should-forward-prop]: https://styled-components.com/docs/api#shouldforwardprop
 [styled-components-as-prop]: https://styled-components.com/docs/api#as-polymorphic-prop
+[fouc]: https://en.wikipedia.org/wiki/Flash_of_unstyled_content

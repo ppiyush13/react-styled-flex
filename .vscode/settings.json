@@ -6,11 +6,13 @@
         "darkgreen",
         "darkseagreen",
         "flexbox",
+        "fouc",
         "linebreak",
         "noreferrer",
         "parens",
         "stroustrup",
         "unitless",
-        "unopinionated"
+        "unopinionated",
+        "unstyled"
     ]
 }
