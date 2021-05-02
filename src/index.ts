@@ -8,6 +8,7 @@ const FlexGapNotSupportedIdentifier = `.${FlexGapNotSupportedClassName} &&`;
 
 const boxModelStyles = (props: BoxProps): CSSObject => ({
     boxSizing: props.sizing,
+    position: props.position,
     height: props.height,
     maxHeight: props.maxHeight,
     minHeight: props.minHeight,

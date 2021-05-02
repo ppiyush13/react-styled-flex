@@ -1,7 +1,7 @@
 export const FlexGapSupportedClassName = 'flex-gap-supported';
 export const FlexGapNotSupportedClassName = 'flex-gap-not-supported';
 
-export const boxPropsArr = ['sizing', 'height', 'maxHeight', 'minHeight', 'width', 'maxWidth', 'minWidth', 'margin', 'padding', 'border'] as const;
+export const boxPropsArr = ['sizing', 'position', 'height', 'maxHeight', 'minHeight', 'width', 'maxWidth', 'minWidth', 'margin', 'padding', 'border'] as const;
 export const flexBoxPropsArr = ['inline', 'wrap', 'reverse', 'wrapReverse', 'column', 'center', 'justifyContent', 'justifyItems', 'alignItems', 'alignContent', 'gap', 'columnGap', 'rowGap'] as const;
 export const flexItemPropsArr = ['box', 'order', 'grow', 'shrink', 'basis', 'flex', 'alignSelf', 'justifySelf'] as const;
 

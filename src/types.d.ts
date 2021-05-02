@@ -1,5 +1,4 @@
-import { ReactNode } from 'react';
-import { CSSProperties } from 'styled-components';
+import { ReactNode, CSSProperties } from 'react';
 
 type Never<T> = {
     [P in keyof T] ?: never;
@@ -7,6 +6,7 @@ type Never<T> = {
 
 export interface BoxProps {
     sizing?: CSSProperties['boxSizing'],
+    position?: CSSProperties['position'],
     height?: CSSProperties['height'],
     maxHeight?: CSSProperties['maxHeight'];
     minHeight?: CSSProperties['minHeight'];

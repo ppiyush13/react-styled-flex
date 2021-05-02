@@ -4,6 +4,7 @@ import { Box, FlexBox, FlexItem } from '../src';
 
 const boxCases = [
     [{ sizing: 'content-box' }, 'box-sizing: content-box'],
+    [{ position: 'fixed' }, 'position: fixed'],
     [{ height: '15px' }, 'height: 15px'],
     [{ maxHeight: '100vh' }, 'max-height: 100vh'],
     [{ minHeight: 100 }, 'min-height: 100px'],
