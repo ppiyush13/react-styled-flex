@@ -127,11 +127,11 @@ For rendering elements other than divs, please refer [Change underlying element
 *   [A Complete Guide to Flexbox][flex-guide-css-tricks]
 *   [CSS Flexible Box Layout][flex-guide-mdn]
 
-[npm]: https://img.shields.io/npm/v/react-styled-flex.svg
-[npm-url]: https://www.npmjs.com/package/react-styled-flex
-[size-min]: https://img.shields.io/bundlephobia/min/react-styled-flex
-[size-minzip]: https://img.shields.io/bundlephobia/minzip/react-styled-flex
-[bundlephobia-url]: https://bundlephobia.com/result?p=react-styled-flex
+[npm]: https://img.shields.io/npm/v/react-styled-flex/latest-1
+[npm-url]: https://www.npmjs.com/package/react-styled-flex/v/latest-1
+[size-min]: https://img.shields.io/bundlephobia/min/react-styled-flex@latest-1
+[size-minzip]: https://img.shields.io/bundlephobia/minzip/react-styled-flex@latest-1
+[bundlephobia-url]: https://bundlephobia.com/result?p=react-styled-flex@latest-1
 [codacy]: https://api.codacy.com/project/badge/Grade/3883d0db80a44fa6b18a311be25a8553
 [codacy-url]: https://www.codacy.com/manual/ppiyush13/react-styled-flex?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ppiyush13/react-styled-flex&amp;utm_campaign=Badge_Grade
 [build]: https://circleci.com/gh/ppiyush13/react-styled-flex/tree/master.svg?style=shield
