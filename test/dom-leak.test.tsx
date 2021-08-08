@@ -17,6 +17,10 @@ const boxParams = {
     minWidth: '30rem',
     maxWidth: '60ch',
     margin: '2rem auto',
+    marginTop: '89px',
+    marginRight: '2rem',
+    marginBottom: '6ch',
+    marginLeft: 96,
     padding: '10px 15px 0px 15px',
     border: '1px solid #000',
 } as const;

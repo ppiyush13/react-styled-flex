@@ -16,6 +16,10 @@ const boxModelStyles = (props: BoxProps): CSSObject => ({
     maxWidth: props.maxWidth,
     minWidth: props.minWidth,
     margin: props.margin,
+    marginTop: props.marginTop,
+    marginRight: props.marginRight,
+    marginBottom: props.marginBottom,
+    marginLeft: props.marginLeft,
     padding: props.padding,
     border: props.border,
 });
