@@ -98,7 +98,15 @@ All props are **optional**.
 |maxWidth|*string&nbsp;&vert;&nbsp;number*|Applies [max-width][max-width-mdn]|
 |minWidth|*string&nbsp;&vert;&nbsp;number*|Applies [min-width][min-width-mdn]|
 |margin|*string&nbsp;&vert;&nbsp;number*|Applies margin using CSS [margin][margin-mdn] shorthand specification|
+|marginTop|*string&nbsp;&vert;&nbsp;number*|Applies margin using CSS [margin-top][margin-top-mdn] specification|
+|marginRight|*string&nbsp;&vert;&nbsp;number*|Applies margin using CSS [margin-right][margin-right-mdn] specification|
+|marginBottom|*string&nbsp;&vert;&nbsp;number*|Applies margin using CSS [margin-bottom][margin-bottom-mdn] specification|
+|marginLeft|*string&nbsp;&vert;&nbsp;number*|Applies margin using CSS [margin-left][margin-left-mdn] specification|
 |padding|*string&nbsp;&vert;&nbsp;number*|Applies padding using CSS [padding][padding-mdn] shorthand specification|
+|paddingTop|*string&nbsp;&vert;&nbsp;number*|Applies padding using CSS [padding-top][padding-top-mdn] specification|
+|paddingRight|*string&nbsp;&vert;&nbsp;number*|Applies padding using CSS [padding-right][padding-right-mdn] specification|
+|paddingBottom|*string&nbsp;&vert;&nbsp;number*|Applies padding using CSS [padding-bottom][padding-bottom-mdn] specification|
+|paddingLeft|*string&nbsp;&vert;&nbsp;number*|Applies padding using CSS [padding-left][padding-left-mdn] specification|
 |border|*string&nbsp;&vert;&nbsp;number*|Applies border using CSS [border][border-mdn] shorthand specification|
 ### FlexBox
 
@@ -274,7 +282,15 @@ MIT © Piyush Lodaya
 [max-width-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/max-width#syntax
 [min-width-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/min-width#syntax
 [padding-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/padding#Syntax
+[padding-top-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/padding-top#syntax
+[padding-right-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/padding-right#syntax
+[padding-bottom-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/padding-bottom#syntax
+[padding-left-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/padding-left#syntax
 [margin-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/margin#Syntax
+[margin-top-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/margin-top#Syntax
+[margin-right-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/margin-right#Syntax
+[margin-bottom-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/margin-bottom#Syntax
+[margin-left-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/margin-left#Syntax
 [border-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/border#Syntax
 [justify-items-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items#values
 [justify-content-mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content#Values
