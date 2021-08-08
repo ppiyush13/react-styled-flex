@@ -85,7 +85,8 @@ For rendering elements other than divs, please refer [Change underlying element
 
 ### Box
 
-All props are **optional**.
+-   All props are **optional**.
+-   Shorthand syntax for margin and padding props are supported.
 
 |Props|Type|Description|
 |---|:---:|---|
