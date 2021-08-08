@@ -97,16 +97,16 @@ All props are **optional**.
 |width|*string&nbsp;&vert;&nbsp;number*|Applies [width][width-mdn]|
 |maxWidth|*string&nbsp;&vert;&nbsp;number*|Applies [max-width][max-width-mdn]|
 |minWidth|*string&nbsp;&vert;&nbsp;number*|Applies [min-width][min-width-mdn]|
-|margin|*string&nbsp;&vert;&nbsp;number*|Applies margin using CSS [margin][margin-mdn] shorthand specification|
-|marginTop|*string&nbsp;&vert;&nbsp;number*|Applies margin using CSS [margin-top][margin-top-mdn] specification|
-|marginRight|*string&nbsp;&vert;&nbsp;number*|Applies margin using CSS [margin-right][margin-right-mdn] specification|
-|marginBottom|*string&nbsp;&vert;&nbsp;number*|Applies margin using CSS [margin-bottom][margin-bottom-mdn] specification|
-|marginLeft|*string&nbsp;&vert;&nbsp;number*|Applies margin using CSS [margin-left][margin-left-mdn] specification|
-|padding|*string&nbsp;&vert;&nbsp;number*|Applies padding using CSS [padding][padding-mdn] shorthand specification|
-|paddingTop|*string&nbsp;&vert;&nbsp;number*|Applies padding using CSS [padding-top][padding-top-mdn] specification|
-|paddingRight|*string&nbsp;&vert;&nbsp;number*|Applies padding using CSS [padding-right][padding-right-mdn] specification|
-|paddingBottom|*string&nbsp;&vert;&nbsp;number*|Applies padding using CSS [padding-bottom][padding-bottom-mdn] specification|
-|paddingLeft|*string&nbsp;&vert;&nbsp;number*|Applies padding using CSS [padding-left][padding-left-mdn] specification|
+|margin, m|*string&nbsp;&vert;&nbsp;number*|Applies margin using CSS [margin][margin-mdn] shorthand specification|
+|marginTop, mt|*string&nbsp;&vert;&nbsp;number*|Applies margin using CSS [margin-top][margin-top-mdn] specification|
+|marginRight, mr|*string&nbsp;&vert;&nbsp;number*|Applies margin using CSS [margin-right][margin-right-mdn] specification|
+|marginBottom, mb|*string&nbsp;&vert;&nbsp;number*|Applies margin using CSS [margin-bottom][margin-bottom-mdn] specification|
+|marginLeft, ml|*string&nbsp;&vert;&nbsp;number*|Applies margin using CSS [margin-left][margin-left-mdn] specification|
+|padding, p|*string&nbsp;&vert;&nbsp;number*|Applies padding using CSS [padding][padding-mdn] shorthand specification|
+|paddingTop, pt|*string&nbsp;&vert;&nbsp;number*|Applies padding using CSS [padding-top][padding-top-mdn] specification|
+|paddingRight, pr|*string&nbsp;&vert;&nbsp;number*|Applies padding using CSS [padding-right][padding-right-mdn] specification|
+|paddingBottom, pb|*string&nbsp;&vert;&nbsp;number*|Applies padding using CSS [padding-bottom][padding-bottom-mdn] specification|
+|paddingLeft, pl|*string&nbsp;&vert;&nbsp;number*|Applies padding using CSS [padding-left][padding-left-mdn] specification|
 |border|*string&nbsp;&vert;&nbsp;number*|Applies border using CSS [border][border-mdn] shorthand specification|
 ### FlexBox
 
