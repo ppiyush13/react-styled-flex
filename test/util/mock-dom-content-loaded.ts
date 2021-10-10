@@ -7,18 +7,18 @@ const updateDocumentReadyState = (readyState: DocumentReadyState) => {
 };
 
 /** raise DOM content loaded event manually */
-const loadDom = () => setImmediate(() => {
+const loadDom = () => setTimeout(() => {
     updateDocumentReadyState('complete');
     document.dispatchEvent(new Event('DOMContentLoaded', {
         bubbles: true,
         cancelable: true,
     }));
-});
+}, 0);
 
 /** utility function to wait until dom content is loaded */
 const waitForDomContentToLoad = () => new Promise(resolve => {
     document.addEventListener('DOMContentLoaded', () => {
-        setImmediate(resolve);
+        setTimeout(resolve, 0);
     });
 });
 
