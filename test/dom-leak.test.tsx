@@ -36,7 +36,16 @@ const boxParams = {
     pr: 2,
     pb: '64px',
     pl: '4rem',
-    border: '1px solid #000',
+    border: '1px dashed #000',
+    borderTop: '2px dashed yellow',
+    borderRight: '3px dashed red',
+    borderBottom: '4px dashed blue',
+    borderLeft: '5px dashed purple',
+    b: '6px solid #111',
+    bt: '7px solid #222',
+    br: '8px solid #333',
+    bb: '9px solid #444',
+    bl: '10px solid #555',
 } as const;
 
 const flexBoxParams = {

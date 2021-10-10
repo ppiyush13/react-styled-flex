@@ -25,7 +25,11 @@ const boxModelStyles = (props: BoxProps): CSSObject => ({
     paddingRight: props.paddingRight || props.pr,
     paddingBottom: props.paddingBottom || props.pb,
     paddingLeft: props.paddingLeft || props.pl,
-    border: props.border,
+    border: props.border || props.b,
+    borderTop: props.borderTop || props.bt,
+    borderRight: props.borderRight || props.br,
+    borderBottom: props.borderBottom || props.bb,
+    borderLeft: props.borderLeft || props.bl,
 });
 
 const flexStyles = (props: FlexBoxProps): CSSObject => {

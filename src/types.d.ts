@@ -34,6 +34,15 @@ export interface BoxProps {
     pb?: CSSProperties['paddingBottom'],
     pl?: CSSProperties['paddingLeft'],
     border?: CSSProperties['border'],
+    borderTop?:CSSProperties['borderTop'],
+    borderRight?:CSSProperties['borderRight'],
+    borderBottom?:CSSProperties['borderBottom'],
+    borderLeft?:CSSProperties['borderLeft'],
+    b?: CSSProperties['border'],
+    bt?:CSSProperties['borderTop'],
+    br?:CSSProperties['borderRight'],
+    bb?:CSSProperties['borderBottom'],
+    bl?:CSSProperties['borderLeft'],
     children?: ReactNode,
 }
 
