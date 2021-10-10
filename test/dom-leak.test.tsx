@@ -10,6 +10,11 @@ const assert = (element: Element) => {
 const boxParams = {
     sizing: 'border-box',
     position: 'relative',
+    zIndex: 10,
+    outline: '1px solid purple',
+    overflow: 'auto',
+    overflowX: 'scroll',
+    overflowY: 'hidden',
     height: '50px',
     minHeight: '100vh',
     maxHeight: 100,

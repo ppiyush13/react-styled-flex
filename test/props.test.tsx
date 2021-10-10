@@ -5,15 +5,21 @@ import { Box, FlexBox, FlexItem } from '../src';
 const boxCases = [
     [{ sizing: 'content-box' }, 'box-sizing: content-box'],
     [{ position: 'fixed' }, 'position: fixed'],
-    
+    [{ zIndex: 10 }, 'z-index: 10'],
+    [{ outline: '1px solid purple' }, 'outline: 1px solid purple'],
+
+    [{ overflow: 'auto' }, 'overflow: auto'],
+    [{ overflowX: 'scroll' }, 'overflow-x: scroll'],
+    [{ overflowY: 'hidden' }, 'overflow-y: hidden'],
+
     [{ height: '15px' }, 'height: 15px'],
     [{ maxHeight: '100vh' }, 'max-height: 100vh'],
     [{ minHeight: 100 }, 'min-height: 100px'],
-    
+
     [{ width: '100%' }, 'width: 100%'],
     [{ maxWidth: '10rem' }, 'max-width: 10rem'],
     [{ minWidth: '60ch' }, 'min-width: 60ch'],
-    
+
     [{ margin: '2rem 0.5rem' }, 'margin: 2rem 0.5rem'],
     [{ margin: 5 }, 'margin: 5px'],
     [{ marginTop: 6 }, 'margin-top: 6px'],
@@ -25,18 +31,18 @@ const boxCases = [
     [{ mr: 12 }, 'margin-right: 12px'],
     [{ mb: 13 }, 'margin-bottom: 13px'],
     [{ ml: 14 }, 'margin-left: 14px'],
-    
+
     [{ padding: '15px 10px 5px 0px' }, 'padding: 15px 10px 5px 0px'],
     [{ paddingTop: '2em' }, 'padding-top: 2em'],
     [{ paddingRight: '3em' }, 'padding-right: 3em'],
     [{ paddingBottom: '4em' }, 'padding-bottom: 4em'],
-    [{ paddingLeft: '5em' }, 'padding-left: 5em'], 
+    [{ paddingLeft: '5em' }, 'padding-left: 5em'],
     [{ p: '10vh 0 0 10vh' }, 'padding: 10vh 0 0 10vh'],
     [{ pt: '6em' }, 'padding-top: 6em'],
     [{ pr: '7em' }, 'padding-right: 7em'],
     [{ pb: '8em' }, 'padding-bottom: 8em'],
     [{ pl: '9em' }, 'padding-left: 9em'],
-    
+
     [{ border: '1px solid #000' }, 'border: 1px solid #000'],
     [{ borderTop: '2px solid #000' }, 'border-top: 2px solid #000'],
     [{ borderRight: '3px solid #000' }, 'border-right: 3px solid #000'],
