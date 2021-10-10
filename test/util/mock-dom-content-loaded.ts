@@ -22,7 +22,13 @@ const waitForDomContentToLoad = () => new Promise(resolve => {
     });
 });
 
-export default () => {
+interface MockDomContentLoadedResult{
+    loadDom: () => void;
+    waitForDomContentToLoad: ()=>Promise<unknown>;
+    restore: () => void;
+}
+
+export default (): MockDomContentLoadedResult => {
     /** store original document.readyState */
     const orgReadyState = document.readyState;
 
