@@ -51,7 +51,11 @@ export interface BoxProps {
     children?: ReactNode,
 }
 
-export interface FlexBoxProps {
+export interface FlexBoxProps extends FlexBoxUniqueProps {
+    children?: ReactNode,
+}
+
+export interface FlexBoxUniqueProps {
     inline?: boolean,
     wrap?: boolean,
     wrapReverse?: boolean,
@@ -65,7 +69,6 @@ export interface FlexBoxProps {
     gap?: CSSProperties['gap'],
     columnGap?: CSSProperties['columnGap'],
     rowGap?: CSSProperties['rowGap'],
-    children?: ReactNode,
 }
 
 export interface FlexItemBaseProps {
@@ -82,4 +85,4 @@ export interface FlexItemBaseProps {
 
 export type FlexItemProps =
     | FlexItemBaseProps & { box: true} & FlexBoxProps
-    | FlexItemBaseProps & { box?: false } & Never<FlexBoxProps>;
+    | FlexItemBaseProps & { box?: false } & Never<FlexBoxUniqueProps>;
