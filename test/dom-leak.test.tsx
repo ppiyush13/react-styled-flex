@@ -1,122 +1,135 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Box, BoxProps, FlexBox, FlexBoxProps, FlexItem, FlexItemProps } from '../src';
+import {
+  Box,
+  BoxProps,
+  FlexBox,
+  FlexBoxProps,
+  FlexItem,
+  FlexItemProps,
+} from '../src';
 
 const assert = (element: Element) => {
-    expect(element.attributes.length).toBe(1);
-    expect(element).toHaveAttribute('class');
+  expect(element.attributes.length).toBe(1);
+  expect(element).toHaveAttribute('class');
 };
 
 const boxParams = {
-    sizing: 'border-box',
-    position: 'relative',
-    zIndex: 10,
-    outline: '1px solid purple',
-    overflow: 'auto',
-    overflowX: 'scroll',
-    overflowY: 'hidden',
-    height: '50px',
-    minHeight: '100vh',
-    maxHeight: 100,
-    width: '100%',
-    minWidth: '30rem',
-    maxWidth: '60ch',
-    margin: '2rem auto',
-    marginTop: '89px',
-    marginRight: '2rem',
-    marginBottom: '6ch',
-    marginLeft: 96,
-    m: '16px',
-    mt: '1em',
-    mr: '4vh',
-    mb: 100,
-    ml: '3%',
-    padding: '10px 15px 0px 15px',
-    paddingTop: '100%',
-    paddingRight: '2px',
-    paddingBottom: '13rem',
-    paddingLeft: 24,
-    p: '1px 2rem 3em 4ch',
-    pt: 10,
-    pr: 2,
-    pb: '64px',
-    pl: '4rem',
-    border: '1px dashed #000',
-    borderTop: '2px dashed yellow',
-    borderRight: '3px dashed red',
-    borderBottom: '4px dashed blue',
-    borderLeft: '5px dashed purple',
-    b: '6px solid #111',
-    bt: '7px solid #222',
-    br: '8px solid #333',
-    bb: '9px solid #444',
-    bl: '10px solid #555',
+  sizing: 'border-box',
+  position: 'relative',
+  zIndex: 10,
+  outline: '1px solid purple',
+  overflow: 'auto',
+  overflowX: 'scroll',
+  overflowY: 'hidden',
+  height: '50px',
+  minHeight: '100vh',
+  maxHeight: 100,
+  width: '100%',
+  minWidth: '30rem',
+  maxWidth: '60ch',
+  margin: '2rem auto',
+  marginTop: '89px',
+  marginRight: '2rem',
+  marginBottom: '6ch',
+  marginLeft: 96,
+  m: '16px',
+  mt: '1em',
+  mr: '4vh',
+  mb: 100,
+  ml: '3%',
+  padding: '10px 15px 0px 15px',
+  paddingTop: '100%',
+  paddingRight: '2px',
+  paddingBottom: '13rem',
+  paddingLeft: 24,
+  p: '1px 2rem 3em 4ch',
+  pt: 10,
+  pr: 2,
+  pb: '64px',
+  pl: '4rem',
+  border: '1px dashed #000',
+  borderTop: '2px dashed yellow',
+  borderRight: '3px dashed red',
+  borderBottom: '4px dashed blue',
+  borderLeft: '5px dashed purple',
+  b: '6px solid #111',
+  bt: '7px solid #222',
+  br: '8px solid #333',
+  bb: '9px solid #444',
+  bl: '10px solid #555',
 } as const;
 
 const flexBoxParams = {
-    inline: true,
-    wrap: true,
-    wrapReverse: true,
-    column: true,
-    reverse: true,
-    center: true,
-    justifyItems: 'flex-start',
-    justifyContent: 'flex-end',
-    alignItems: 'flex-start',
-    alignContent: 'flex-end',
-    gap: '15px',
-    rowGap: '20px',
-    columnGap: '25px',
+  inline: true,
+  wrap: true,
+  wrapReverse: true,
+  column: true,
+  reverse: true,
+  center: true,
+  justifyItems: 'flex-start',
+  justifyContent: 'flex-end',
+  alignItems: 'flex-start',
+  alignContent: 'flex-end',
+  gap: '15px',
+  rowGap: '20px',
+  columnGap: '25px',
 } as const;
 
 const flexItemParams = {
-    box: true,
-    order: 5,
-    shrink: 0,
-    grow: 'unset',
-    basis: '100%',
-    flex: 1,
-    alignSelf: 'center',
-    justifySelf: 'center',
+  box: true,
+  order: 5,
+  shrink: 0,
+  grow: 'unset',
+  basis: '100%',
+  flex: 1,
+  alignSelf: 'center',
+  justifySelf: 'center',
 } as const;
 
 describe('testing dom leaking nature of Box, FlexBox and FlexItem', () => {
-    it('box: expect props are not leaked into DOM', () => {
-        const props: Required<BoxProps> = {
-            ...boxParams,
-            children: <>
-                <div>child div</div>
-            </>,
-        };
+  it('box: expect props are not leaked into DOM', () => {
+    const props: Required<BoxProps> = {
+      ...boxParams,
+      children: (
+        <>
+          <div>child div</div>
+        </>
+      ),
+    };
 
-        const { container } = render(<Box {...props} />);
-        assert(container.firstElementChild);
-    });
+    const { container } = render(<Box {...props} />);
+    assert(container.firstElementChild);
+  });
 
-    it('flexBox: expect props are not leaked into DOM', () => {
-        const props: Required<FlexBoxProps> = {
-            ...boxParams,
-            ...flexBoxParams,
-            children: <>
-                <div>child div</div>
-            </>,
-        };
+  it('flexBox: expect props are not leaked into DOM', () => {
+    const props: Required<FlexBoxProps> = {
+      ...boxParams,
+      ...flexBoxParams,
+      children: (
+        <>
+          <div>child div</div>
+        </>
+      ),
+    };
 
-        const { container } = render(<FlexBox {...props} />);
-        assert(container.firstElementChild);
-    });
+    const { container } = render(<FlexBox {...props} />);
+    assert(container.firstElementChild);
+  });
 
-    it('flexItem: expect props are not leaked into DOM', () => {
-        const props: Required<FlexItemProps> = {
-            ...boxParams,
-            ...flexBoxParams,
-            ...flexItemParams,
-            children: <>
-                <div>child div</div>
-            </>,
-        };
+  it('flexItem: expect props are not leaked into DOM', () => {
+    const props: Required<FlexItemProps> = {
+      ...boxParams,
+      ...flexBoxParams,
+      ...flexItemParams,
+      children: (
+        <>
+          <div>child div</div>
+        </>
+      ),
+    };
 
-        const { container } = render(<FlexItem {...props} />);
-        assert(container.firstElementChild);
-    });
+    const { container } = render(<FlexItem {...props} />);
+    assert(container.firstElementChild);
+  });
 });

@@ -11,56 +11,64 @@
 Simple, light, unopinionated, CSS standard compliant Flexbox component for [react][react-git] using [styled-components][styled-components-git]
 
 ## 🎏 Changelog
-This is `react-styled-flex@2` documentation. For version 1, please follow [this][version-1-docs] link. Following changes are introduced in v2: 
+
+This is `react-styled-flex@2` documentation. For version 1, please follow [this][version-1-docs] link. Following changes are introduced in v2:
 
 ### ✂️ Breaking changes
 
-*   `is` prop of FlexBox and FlexItem component is longer supported. Instead use native styled-components ["as" polymorphic prop][styled-components-as-prop] to render another react component or html element.
-*   Supports `styled-components` version greater than or equal to `>=5.1.0`. If you want to use older versions of `styled-components`, please install `react-styled-flex` v1 by using `npm install react-styled-flex@latest-1` command.
+- `is` prop of FlexBox and FlexItem component is longer supported. Instead use native styled-components ["as" polymorphic prop][styled-components-as-prop] to render another react component or html element.
+- Supports `styled-components` version greater than or equal to `>=5.1.0`. If you want to use older versions of `styled-components`, please install `react-styled-flex` v1 by using `npm install react-styled-flex@latest-1` command.
 
 ### 🚀 Enhancements
 
-*   Typescript rewrite.
-*   ~10% lightweight than v1.
-*   Supports SSR and SSG rendering.
-*   Introduces [Box](#Box) component.
-*   Uses `styled-components` [shouldForwardProp][styled-components-should-forward-prop] mechanism to avoid leaking props to DOM. As a result, `is` prop from v1 is no longer supported. 
+- Typescript rewrite.
+- ~10% lightweight than v1.
+- Supports SSR and SSG rendering.
+- Introduces [Box](#Box) component.
+- Uses `styled-components` [shouldForwardProp][styled-components-should-forward-prop] mechanism to avoid leaking props to DOM. As a result, `is` prop from v1 is no longer supported.
 
 ## 🔋 Features
-*   **Lightweight and dependency free**, ~2.7 KB minified or ~1.2 KB minified + gzipped.
-*   **Clean underlying HTML DOM**. No prop leakage to DOM.
-*   Supports [flex-gap][flex-gap] feature. For non supported browsers, it degrades gracefully by applying appropriate margin properties.
-*   [Supports rendering](#change-underlying-element) of any react component or html element.
-*   [Supports unitless values](#supports-unitless-values) wherever required.
-*   Supports SSR and SSG rendering.
-*   TypeScript support.
+
+- **Lightweight and dependency free**, ~2.7 KB minified or ~1.2 KB minified + gzipped.
+- **Clean underlying HTML DOM**. No prop leakage to DOM.
+- Supports [flex-gap][flex-gap] feature. For non supported browsers, it degrades gracefully by applying appropriate margin properties.
+- [Supports rendering](#change-underlying-element) of any react component or html element.
+- [Supports unitless values](#supports-unitless-values) wherever required.
+- Supports SSR and SSG rendering.
+- TypeScript support.
 
 ## 💿 Installation
+
 Yarn
+
 ```sh
 yarn add react-styled-flex
 ```
+
 Npm
+
 ```sh
 npm i react-styled-flex
 ```
 
-**react-styled-flex** requires peer dependencies [react][react-npm] and [styled-components][styled-components-npm]. You need to add them separately. 
+**react-styled-flex** requires peer dependencies [react][react-npm] and [styled-components][styled-components-npm]. You need to add them separately.
 
 ## 🔌 API
-*   **react-styled-flex** exports three components: `Box`, `FlexBox` and `FlexItem`.
-*   `Box` behaves as basic CSS box. `FlexBox` and `FlexItem` extends `Box`.
-*   `FlexBox` behaves as a container with `display: flex` rule. 
-*   `FlexItem` as acts as a child for `FlexBox`. Though `FlexBox` can have other components as child as well. 
-*   Only use `FlexItem` if you need to provide additional styles to child components. See [Props](#props) section for more details.
-*   `FlexItem` can be treated as `FlexBox` for nested children by setting `box` prop as `true` on `FlexItem`
+
+- **react-styled-flex** exports three components: `Box`, `FlexBox` and `FlexItem`.
+- `Box` behaves as basic CSS box. `FlexBox` and `FlexItem` extends `Box`.
+- `FlexBox` behaves as a container with `display: flex` rule.
+- `FlexItem` as acts as a child for `FlexBox`. Though `FlexBox` can have other components as child as well.
+- Only use `FlexItem` if you need to provide additional styles to child components. See [Props](#props) section for more details.
+- `FlexItem` can be treated as `FlexBox` for nested children by setting `box` prop as `true` on `FlexItem`
 
 ## 🕹 Usage
-**react-styled-flex** exports three components: **Box**, **FlexBox** and **FlexItem**. 
-All renders simple div with styles derived from passed props. 
+
+**react-styled-flex** exports three components: **Box**, **FlexBox** and **FlexItem**.
+All renders simple div with styles derived from passed props.
 
 ```javascript
-import { Box, FlexBox, FlexItem } from "react-styled-flex";
+import { Box, FlexBox, FlexItem } from 'react-styled-flex';
 
 const Layout = () => {
   return (
@@ -69,115 +77,122 @@ const Layout = () => {
       <FlexItem>Child 2</FlexItem>
       <FlexItem flex={1}>Child 3</FlexItem>
     </FlexBox>
-  )
-}
+  );
+};
 ```
-On rendering `Layout` component, 
-*   One parent div with style `display: flex; justify-content: center; align-items: center` and three nested divs will be rendered.
-    *   First child will have padding of `10px`.
-    *   Second child will be simple div.
-    *   Third child will have style `flex: 1;` 
+
+On rendering `Layout` component,
+
+- One parent div with style `display: flex; justify-content: center; align-items: center` and three nested divs will be rendered.
+  - First child will have padding of `10px`.
+  - Second child will be simple div.
+  - Third child will have style `flex: 1;`
 
 For rendering elements other than divs, please refer [Change underlying element
-](#change-underlying-element) section. 
+](#change-underlying-element) section.
 
 ## 🎛 Props
 
 ### Box
 
--   All props are **optional**.
--   Shorthand syntax for margin and padding props are supported.
+- All props are **optional**.
+- Shorthand syntax for margin and padding props are supported.
 
-|Props|Type|Description|
-|---|:---:|---|
-|sizing|*string*|Applies [box-sizing][box-sizing-mdn]|
-|position|*string*|Applies [position][position-mdn]|
-|height|*string&nbsp;&vert;&nbsp;number*|Applies [height][height-mdn]|
-|maxHeight|*string&nbsp;&vert;&nbsp;number*|Applies [max-height][max-height-mdn]|
-|minHeight|*string&nbsp;&vert;&nbsp;number*|Applies [min-height][min-height-mdn]|
-|width|*string&nbsp;&vert;&nbsp;number*|Applies [width][width-mdn]|
-|maxWidth|*string&nbsp;&vert;&nbsp;number*|Applies [max-width][max-width-mdn]|
-|minWidth|*string&nbsp;&vert;&nbsp;number*|Applies [min-width][min-width-mdn]|
-|m, margin|*string&nbsp;&vert;&nbsp;number*|Applies margin using CSS [margin][margin-mdn] shorthand specification|
-|mt, marginTop|*string&nbsp;&vert;&nbsp;number*|Applies margin using CSS [margin-top][margin-top-mdn] specification|
-|mr, marginRight|*string&nbsp;&vert;&nbsp;number*|Applies margin using CSS [margin-right][margin-right-mdn] specification|
-|mb, marginBottom|*string&nbsp;&vert;&nbsp;number*|Applies margin using CSS [margin-bottom][margin-bottom-mdn] specification|
-|ml, marginLeft|*string&nbsp;&vert;&nbsp;number*|Applies margin using CSS [margin-left][margin-left-mdn] specification|
-|p, padding|*string&nbsp;&vert;&nbsp;number*|Applies padding using CSS [padding][padding-mdn] shorthand specification|
-|pt, paddingTop|*string&nbsp;&vert;&nbsp;number*|Applies padding using CSS [padding-top][padding-top-mdn] specification|
-|pr, paddingRight|*string&nbsp;&vert;&nbsp;number*|Applies padding using CSS [padding-right][padding-right-mdn] specification|
-|pb, paddingBottom|*string&nbsp;&vert;&nbsp;number*|Applies padding using CSS [padding-bottom][padding-bottom-mdn] specification|
-|pl,paddingLeft|*string&nbsp;&vert;&nbsp;number*|Applies padding using CSS [padding-left][padding-left-mdn] specification|
-|border|*string&nbsp;&vert;&nbsp;number*|Applies border using CSS [border][border-mdn] shorthand specification|
+| Props             |               Type               | Description                                                                  |
+| ----------------- | :------------------------------: | ---------------------------------------------------------------------------- |
+| sizing            |             _string_             | Applies [box-sizing][box-sizing-mdn]                                         |
+| position          |             _string_             | Applies [position][position-mdn]                                             |
+| height            | _string&nbsp;&vert;&nbsp;number_ | Applies [height][height-mdn]                                                 |
+| maxHeight         | _string&nbsp;&vert;&nbsp;number_ | Applies [max-height][max-height-mdn]                                         |
+| minHeight         | _string&nbsp;&vert;&nbsp;number_ | Applies [min-height][min-height-mdn]                                         |
+| width             | _string&nbsp;&vert;&nbsp;number_ | Applies [width][width-mdn]                                                   |
+| maxWidth          | _string&nbsp;&vert;&nbsp;number_ | Applies [max-width][max-width-mdn]                                           |
+| minWidth          | _string&nbsp;&vert;&nbsp;number_ | Applies [min-width][min-width-mdn]                                           |
+| m, margin         | _string&nbsp;&vert;&nbsp;number_ | Applies margin using CSS [margin][margin-mdn] shorthand specification        |
+| mt, marginTop     | _string&nbsp;&vert;&nbsp;number_ | Applies margin using CSS [margin-top][margin-top-mdn] specification          |
+| mr, marginRight   | _string&nbsp;&vert;&nbsp;number_ | Applies margin using CSS [margin-right][margin-right-mdn] specification      |
+| mb, marginBottom  | _string&nbsp;&vert;&nbsp;number_ | Applies margin using CSS [margin-bottom][margin-bottom-mdn] specification    |
+| ml, marginLeft    | _string&nbsp;&vert;&nbsp;number_ | Applies margin using CSS [margin-left][margin-left-mdn] specification        |
+| p, padding        | _string&nbsp;&vert;&nbsp;number_ | Applies padding using CSS [padding][padding-mdn] shorthand specification     |
+| pt, paddingTop    | _string&nbsp;&vert;&nbsp;number_ | Applies padding using CSS [padding-top][padding-top-mdn] specification       |
+| pr, paddingRight  | _string&nbsp;&vert;&nbsp;number_ | Applies padding using CSS [padding-right][padding-right-mdn] specification   |
+| pb, paddingBottom | _string&nbsp;&vert;&nbsp;number_ | Applies padding using CSS [padding-bottom][padding-bottom-mdn] specification |
+| pl,paddingLeft    | _string&nbsp;&vert;&nbsp;number_ | Applies padding using CSS [padding-left][padding-left-mdn] specification     |
+| border            | _string&nbsp;&vert;&nbsp;number_ | Applies border using CSS [border][border-mdn] shorthand specification        |
+
 ### FlexBox
 
--   All props are **optional**.
--   All boolean props defaults to **false**.
--   All [Box](#box) props are also applicable.
+- All props are **optional**.
+- All boolean props defaults to **false**.
+- All [Box](#box) props are also applicable.
 
-|Props|Type|Description|
-|---|:---:|---|
-|inline|*boolean*|If true, applies `display: inline-flex` rule otherwise applies `display: flex`|
-|column|*boolean*|If true, `flex-direction` rule is set as `column` otherwise set as `row`|
-|reverse|*boolean*|It works in tandem with `column` prop to generate `flex-direction: {row\|column}-reverse`. Following table summaries it,<br/>  <table><thead><tr><th>column</th><th>reverse</th><th>flex&minus;direction</th></tr></thead><tbody><tr><td>false</td><td>false</td><td>row</td></tr><tr><td>false</td><td>true</td><td>row-reverse</td></tr><tr><td>true</td><td>false</td><td>column</td></tr><tr><td>true</td><td>true</td><td>column-reverse</td></tr></tbody></table>|
-|wrap|*boolean*|If true, applies `flex-wrap` as `wrap`|
-|wrapReverse|*boolean*|If true, applies `flex-wrap` as `wrap-reverse`|
-|center|*boolean*|If true, then applies `justify-content: center` and `align-items: center`|
-|gap|*string&nbsp;&vert;&nbsp;number*| Applies gap using CSS [gap][gap-mdn] shorthand specification if browser supports it, otherwise fallbacks to using margin property. Read [flex gap feature](#supports-flex-gap-feature) to understand more|
-|columnGap|*string&nbsp;&vert;&nbsp;number*| Applies CSS [column-gap][column-gap-mdn] property if browser supports it, otherwise fallbacks to using margin property. Read [flex gap feature](#supports-flex-gap-feature) to understand more|
-|rowGap|*string&nbsp;&vert;&nbsp;number*| Applies CSS [row-gap][row-gap-mdn] property if browser supports it, otherwise fallbacks to using margin property. Read [flex gap feature](#supports-flex-gap-feature) to understand more|
-|justifyItems|*string*|Applies `justify-items` rule. Depending on the browser, [these justify-items][justify-items-mdn] values might be supported|
-|justifyContent|*string*|Applies `justify-content` rule. Depending on the browser, [these justify-content][justify-content-mdn] values might be supported|
-|alignItems|*string*|Applies `align-items` rule. Depending on the browser, [these align-items][align-items-mdn] values might be supported|
-|alignContent|*string*|Applies `align-content` rule. Depending on the browser, [these align-content][align-content-mdn] values might be supported|
+| Props          |               Type               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| -------------- | :------------------------------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| inline         |            _boolean_             | If true, applies `display: inline-flex` rule otherwise applies `display: flex`                                                                                                                                                                                                                                                                                                                                                                                         |
+| column         |            _boolean_             | If true, `flex-direction` rule is set as `column` otherwise set as `row`                                                                                                                                                                                                                                                                                                                                                                                               |
+| reverse        |            _boolean_             | It works in tandem with `column` prop to generate `flex-direction: {row\|column}-reverse`. Following table summaries it,<br/> <table><thead><tr><th>column</th><th>reverse</th><th>flex&minus;direction</th></tr></thead><tbody><tr><td>false</td><td>false</td><td>row</td></tr><tr><td>false</td><td>true</td><td>row-reverse</td></tr><tr><td>true</td><td>false</td><td>column</td></tr><tr><td>true</td><td>true</td><td>column-reverse</td></tr></tbody></table> |
+| wrap           |            _boolean_             | If true, applies `flex-wrap` as `wrap`                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| wrapReverse    |            _boolean_             | If true, applies `flex-wrap` as `wrap-reverse`                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| center         |            _boolean_             | If true, then applies `justify-content: center` and `align-items: center`                                                                                                                                                                                                                                                                                                                                                                                              |
+| gap            | _string&nbsp;&vert;&nbsp;number_ | Applies gap using CSS [gap][gap-mdn] shorthand specification if browser supports it, otherwise fallbacks to using margin property. Read [flex gap feature](#supports-flex-gap-feature) to understand more                                                                                                                                                                                                                                                              |
+| columnGap      | _string&nbsp;&vert;&nbsp;number_ | Applies CSS [column-gap][column-gap-mdn] property if browser supports it, otherwise fallbacks to using margin property. Read [flex gap feature](#supports-flex-gap-feature) to understand more                                                                                                                                                                                                                                                                         |
+| rowGap         | _string&nbsp;&vert;&nbsp;number_ | Applies CSS [row-gap][row-gap-mdn] property if browser supports it, otherwise fallbacks to using margin property. Read [flex gap feature](#supports-flex-gap-feature) to understand more                                                                                                                                                                                                                                                                               |
+| justifyItems   |             _string_             | Applies `justify-items` rule. Depending on the browser, [these justify-items][justify-items-mdn] values might be supported                                                                                                                                                                                                                                                                                                                                             |
+| justifyContent |             _string_             | Applies `justify-content` rule. Depending on the browser, [these justify-content][justify-content-mdn] values might be supported                                                                                                                                                                                                                                                                                                                                       |
+| alignItems     |             _string_             | Applies `align-items` rule. Depending on the browser, [these align-items][align-items-mdn] values might be supported                                                                                                                                                                                                                                                                                                                                                   |
+| alignContent   |             _string_             | Applies `align-content` rule. Depending on the browser, [these align-content][align-content-mdn] values might be supported                                                                                                                                                                                                                                                                                                                                             |
 
 ### FlexItem
 
--   All props are **optional**.
--   All boolean props defaults to **false**.
--   All [Box](#box) props are also applicable.
--   All [FlexBox](#flexBox) props are applicable if `box` prop is set to true.
+- All props are **optional**.
+- All boolean props defaults to **false**.
+- All [Box](#box) props are also applicable.
+- All [FlexBox](#flexBox) props are applicable if `box` prop is set to true.
 
-|Props|Type|Description|
-|---|:---:|---|
-|flex|*string&nbsp;&vert;&nbsp;number*|Applies flex using CSS [flex][flex-prop-mdn] shorthand specification|
-|grow|*string&nbsp;&vert;&nbsp;number*|Applies CSS [flex-grow][flex-grow-mdn] property|
-|shrink|*string&nbsp;&vert;&nbsp;number*|Applies CSS [flex-shrink][flex-shrink-mdn] property|
-|basis|*string&nbsp;&vert;&nbsp;number*|Applies CSS [flex-basis][flex-basis-mdn] property|
-|order|*string&nbsp;&vert;&nbsp;number*|Applies CSS [order][order-mdn] property|
-|justifySelf|*string*|Applies `justify-self` rule. Depending on the browser, [these justify-self][justify-self-mdn] values might be supported.|
-|alignSelf|*string*|Applies `align-self` rule. Depending on the browser, [these align-self][align-self-mdn] values might be supported|
-|box|*boolean*|If true, then FlexItem also behaves as a FlexBox. In addition to FlexItem props, all the FlexBox props are applicable|
+| Props       |               Type               | Description                                                                                                              |
+| ----------- | :------------------------------: | ------------------------------------------------------------------------------------------------------------------------ |
+| flex        | _string&nbsp;&vert;&nbsp;number_ | Applies flex using CSS [flex][flex-prop-mdn] shorthand specification                                                     |
+| grow        | _string&nbsp;&vert;&nbsp;number_ | Applies CSS [flex-grow][flex-grow-mdn] property                                                                          |
+| shrink      | _string&nbsp;&vert;&nbsp;number_ | Applies CSS [flex-shrink][flex-shrink-mdn] property                                                                      |
+| basis       | _string&nbsp;&vert;&nbsp;number_ | Applies CSS [flex-basis][flex-basis-mdn] property                                                                        |
+| order       | _string&nbsp;&vert;&nbsp;number_ | Applies CSS [order][order-mdn] property                                                                                  |
+| justifySelf |             _string_             | Applies `justify-self` rule. Depending on the browser, [these justify-self][justify-self-mdn] values might be supported. |
+| alignSelf   |             _string_             | Applies `align-self` rule. Depending on the browser, [these align-self][align-self-mdn] values might be supported        |
+| box         |            _boolean_             | If true, then FlexItem also behaves as a FlexBox. In addition to FlexItem props, all the FlexBox props are applicable    |
 
 ## 📽 Features explained
 
 ### Supports unitless values
-*   **react-styled-flex** supports unitless values where units are required. In that case value will be auto suffixed with with `px` unit.<br/>
-*   Only values where unites are required(eg. **height, width, margin**) will be suffixed. 
-*   CSS rules which don't have units won't be suffixed (eg. **order**)
+
+- **react-styled-flex** supports unitless values where units are required. In that case value will be auto suffixed with with `px` unit.<br/>
+- Only values where unites are required(eg. **height, width, margin**) will be suffixed.
+- CSS rules which don't have units won't be suffixed (eg. **order**)
 
 ### Supports flex gap feature
-*   Browser supports flex gap feature
-    *   If [flex gap feature][flex-gap] is supported in browser than gap, columnGap and rowGap props will function as per specification.
 
-*   Browser don't support flex gap feature
-    *   If browser does not supports it, then we intend to provide graceful degradation of flex gap feature by setting margin. This fallback is provided only if, either of **gap props** is set and **wrap** prop is not set.
-	*   If **wrap** is set then gap wont work in non-supported browser.
-	*   Rest all props are supported. 
+- Browser supports flex gap feature
+
+  - If [flex gap feature][flex-gap] is supported in browser than gap, columnGap and rowGap props will function as per specification.
+
+- Browser don't support flex gap feature
+  - If browser does not supports it, then we intend to provide graceful degradation of flex gap feature by setting margin. This fallback is provided only if, either of **gap props** is set and **wrap** prop is not set.
+  - If **wrap** is set then gap wont work in non-supported browser.
+  - Rest all props are supported.
 
 ### Change underlying element
+
 By default `FlexBox` and `FlexItem` renders div in the DOM. We can change it to any HTML element or react component using `styled-components` [as][styled-components-as-prop] prop.\
 Example:
 
 ```jsx
-import { FlexBox, FlexItem } from "react-styled-flex";
+import { FlexBox, FlexItem } from 'react-styled-flex';
 
 /* other logic */
 
 <FlexBox center>
-  <FlexItem as={"button"}>Child 1</FlexItem>
-  <FlexItem as={"button"}>Child 2</FlexItem>
-</FlexBox>
+  <FlexItem as={'button'}>Child 1</FlexItem>
+  <FlexItem as={'button'}>Child 2</FlexItem>
+</FlexBox>;
 ```
 
 Renders `Child 1` and `Child 2` as button. Similarly any react component can be rendered.
@@ -200,62 +215,64 @@ Below are the fixes available for next.js and gatsby.
 <details>
   <summary>next.js</summary>
 
-  Add custom `Document` to your application within `pages/_document.js`. Here is the minimal `_document` example
+Add custom `Document` to your application within `pages/_document.js`. Here is the minimal `_document` example
 
-  ```jsx
-  // pages/_document.js
-  import Document, { Html, Head, Main, NextScript } from 'next/document'
-  import { FlexGapNotSupportedClassName } from 'react-styled-flex';
+```jsx
+// pages/_document.js
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { FlexGapNotSupportedClassName } from 'react-styled-flex';
 
-  export default class MyDocument extends Document {
-    static async getInitialProps(ctx) {
-      const initialProps = await Document.getInitialProps(ctx)
-      return { ...initialProps }
-    }
-
-    render() {
-      return (
-        <Html>
-          <Head />
-          <body className={FlexGapNotSupportedClassName}>
-            <Main />
-            <NextScript />
-          </body>
-        </Html>
-      )
-    }
+export default class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
   }
 
-  ```
+  render() {
+    return (
+      <Html>
+        <Head />
+        <body className={FlexGapNotSupportedClassName}>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
+}
+```
+
 </details>
 
 <details>
   <summary>gatsby</summary>
 
-  Customize `gatsby-ssr.js` module to implement `onRenderBody` API. Minimal example is shown below:
+Customize `gatsby-ssr.js` module to implement `onRenderBody` API. Minimal example is shown below:
 
-  ```jsx
-  // gatsby-ssr.js
-  const React = require('react');
-  const { FlexGapNotSupportedClassName } = require('react-styled-flex');
+```jsx
+// gatsby-ssr.js
+const React = require('react');
+const { FlexGapNotSupportedClassName } = require('react-styled-flex');
 
-  exports.onRenderBody = ({ setBodyAttributes }) => {
-      setBodyAttributes({
-      className: FlexGapNotSupportedClassName,
-      });
-  };
+exports.onRenderBody = ({ setBodyAttributes }) => {
+  setBodyAttributes({
+    className: FlexGapNotSupportedClassName,
+  });
+};
+```
 
-  ```
 </details>
 
-You may also refer to examples directory for complete working demo. 
+You may also refer to examples directory for complete working demo.
 
 ## ⚖️ License
+
 MIT © Piyush Lodaya
 
 ## 🗃 Resources
-*   [A Complete Guide to Flexbox][flex-guide-css-tricks]
-*   [CSS Flexible Box Layout][flex-guide-mdn]
+
+- [A Complete Guide to Flexbox][flex-guide-css-tricks]
+- [CSS Flexible Box Layout][flex-guide-mdn]
 
 [npm]: https://img.shields.io/npm/v/react-styled-flex
 [npm-url]: https://www.npmjs.com/package/react-styled-flex
@@ -264,7 +281,7 @@ MIT © Piyush Lodaya
 [bundlephobia-url]: https://bundlephobia.com/result?p=react-styled-flex@latest
 [package-types]: https://img.shields.io/npm/types/react-styled-flex
 [codacy]: https://api.codacy.com/project/badge/Grade/3883d0db80a44fa6b18a311be25a8553
-[codacy-url]: https://www.codacy.com/manual/ppiyush13/react-styled-flex?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ppiyush13/react-styled-flex&amp;utm_campaign=Badge_Grade
+[codacy-url]: https://www.codacy.com/manual/ppiyush13/react-styled-flex?utm_source=github.com&utm_medium=referral&utm_content=ppiyush13/react-styled-flex&utm_campaign=Badge_Grade
 [build]: https://circleci.com/gh/ppiyush13/react-styled-flex/tree/master.svg?style=shield
 [build-url]: https://circleci.com/gh/ppiyush13/react-styled-flex/tree/master
 [coverage]: https://codecov.io/gh/ppiyush13/react-styled-flex/branch/master/graph/badge.svg

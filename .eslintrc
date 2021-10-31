@@ -1,47 +1,44 @@
 {
-    "parser": "@typescript-eslint/parser",
-    "extends": [
-        "airbnb-base",
-        "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:json/recommended"
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "airbnb-base",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:json/recommended"
+  ],
+  "plugins": ["@typescript-eslint", "react-hooks"],
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "rules": {
+    "indent": ["error", 4],
+    "linebreak-style": ["error", "windows"],
+    "arrow-parens": ["error", "as-needed"],
+    "brace-style": ["error", "stroustrup", { "allowSingleLine": true }],
+    "object-curly-newline": [
+      "error",
+      {
+        "consistent": true
+      }
     ],
-    "plugins": [
-        "@typescript-eslint",
-        "react-hooks"
-    ],
-    "parserOptions": {
-        "ecmaVersion": 2021,
-        "sourceType": "module"
-    },
-    "rules": {
-        "indent": ["error", 4],
-        "linebreak-style": ["error", "windows"],
-        "arrow-parens": ["error", "as-needed"],
-        "brace-style": ["error", "stroustrup", { "allowSingleLine": true }],
-        "object-curly-newline": [
-            "error",
-            {
-                "consistent": true
-            }
-        ],
-        "no-use-before-define": "off",
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn",
-        "react/prop-types": "off",
-        "import/extensions": "off",
-        "import/no-unresolved": "off",
-        "import/no-extraneous-dependencies": [
-            "error", 
-            {
-                "devDependencies": true
-            }
-        ]
-    },
-    "settings": {
-        "react": {
-            "pragma": "React",
-            "version": "detect"
-        }
+    "no-use-before-define": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/prop-types": "off",
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
     }
+  }
 }

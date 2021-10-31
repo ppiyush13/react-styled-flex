@@ -8,7 +8,7 @@ jobs:
   # when a job name is not provided
   test:
     # Name the Job
-    name: "Job: Lint, test and build"
+    name: 'Job: Lint, test and build'
     # Set the type of machine to run on
     runs-on: ubuntu-latest
 

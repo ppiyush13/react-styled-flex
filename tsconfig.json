@@ -1,15 +1,15 @@
 {
-    "include": [ "src/**/*", "test/**/*", "types/*" ],
-    "compilerOptions": {
-        "outDir": "./dist/",
-        "noImplicitAny": true,
-        "module": "es6",
-        "target": "es5",
-        "jsx": "react",
-        "allowJs": true,
-        "moduleResolution": "Node",
-        "esModuleInterop": true,
-        "declaration": false,
-        "declarationDir": null
-    }
+  "include": ["src/**/*", "test/**/*", "types/*"],
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5",
+    "jsx": "react",
+    "allowJs": true,
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "declaration": false,
+    "declarationDir": null
+  }
 }

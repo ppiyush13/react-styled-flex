@@ -8,30 +8,30 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-    - name: Checking tag name and tag version
-      if: github.event.release.tag_name != github.event.release.name
-      run: |
-        echo "Tag name must be same as tag version"
-        exit 1
-    - uses: actions/checkout@v2
-      with:
-        ref: ${{ github.event.release.target_commitish }}
-    - name: Use Node.js 14
-      uses: actions/setup-node@v1
-      with:
-        node-version: 14.x
-        registry-url: https://registry.npmjs.org/
-    - run: npm ci
-    - run: npm run lint:code:ci
-    - run: npm run test
-    - run: npm run build
-    - run: git config --global user.name "AL5[bot]"
-    - run: git config --global user.email "81697243+al5-bot@users.noreply.github.com"
-    - run: npm run release
-      env:
-        BRANCH_NAME: ${{github.event.release.target_commitish}}
-        TAG_NAME: ${{github.event.release.tag_name}}
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-    - run: git push
-      env:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checking tag name and tag version
+        if: github.event.release.tag_name != github.event.release.name
+        run: |
+          echo "Tag name must be same as tag version"
+          exit 1
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.release.target_commitish }}
+      - name: Use Node.js 14
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - run: npm run lint:code:ci
+      - run: npm run test
+      - run: npm run build
+      - run: git config --global user.name "AL5[bot]"
+      - run: git config --global user.email "81697243+al5-bot@users.noreply.github.com"
+      - run: npm run release
+        env:
+          BRANCH_NAME: ${{github.event.release.target_commitish}}
+          TAG_NAME: ${{github.event.release.tag_name}}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: git push
+        env:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
