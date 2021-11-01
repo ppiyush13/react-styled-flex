@@ -4,24 +4,16 @@
     "airbnb-base",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:json/recommended"
+    "plugin:json/recommended",
+    "prettier"
   ],
-  "plugins": ["@typescript-eslint", "react-hooks"],
+  "plugins": ["@typescript-eslint", "react-hooks", "prettier"],
   "parserOptions": {
     "ecmaVersion": 2021,
     "sourceType": "module"
   },
   "rules": {
-    "indent": ["error", 4],
-    "linebreak-style": ["error", "windows"],
-    "arrow-parens": ["error", "as-needed"],
-    "brace-style": ["error", "stroustrup", { "allowSingleLine": true }],
-    "object-curly-newline": [
-      "error",
-      {
-        "consistent": true
-      }
-    ],
+    "prettier/prettier": "error",
     "no-use-before-define": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",

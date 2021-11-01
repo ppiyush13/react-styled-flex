@@ -1,6 +1,7 @@
 {
     "plugins": [
         "preset-lint-recommended",
-        ["lint-heading-increment"]
+        ["lint-heading-increment"],
+        ["remark-lint-list-item-indent", false]
     ]
 }
